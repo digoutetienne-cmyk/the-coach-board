@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prezzi — The Coach Board</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root {
+  --g: #00c853;
+  --gdim: rgba(0,200,83,.10);
+  --gbright: #00e676;
+  --dark: #080c09;
+  --dark2: #0f1410;
+  --dark3: #161d17;
+  --bd: rgba(255,255,255,.08);
+  --t1: #f0f4f1;
+  --t2: #a8b5aa;
+  --t3: #5a6b5c;
+  --r: 14px;
+  --rs: 8px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--dark);
+  color: var(--t1);
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+.display {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  line-height: .95;
+  letter-spacing: -.01em;
+  text-transform: uppercase;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 40px;
+  background: rgba(8,12,9,.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--bd);
+}
+.nav-logo {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 20px;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: var(--t1);
+  text-decoration: none;
+}
+.nav-logo span { color: var(--g); }
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+}
+.nav-links a {
+  color: var(--t2);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color .2s;
+}
+.nav-links a:hover { color: var(--t1); }
+.nav-links a.active { color: var(--t1); }
+.nav-cta {
+  background: var(--g);
+  color: #000 !important;
+  font-weight: 700 !important;
+  padding: 10px 22px;
+  border-radius: 100px;
+  font-size: 14px !important;
+  transition: background .2s !important;
+}
+.nav-cta:hover { background: var(--gbright) !important; }
+
+/* ── HERO ── */
+.hero {
+  padding: 140px 40px 72px;
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+}
+.section-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--g);
+  margin-bottom: 16px;
+}
+.hero h1 { font-size: clamp(48px, 7vw, 80px); margin-bottom: 20px; }
+.hero h1 em { font-style: normal; color: var(--g); }
+.hero-sub {
+  font-size: 18px;
+  color: var(--t2);
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.65;
+}
+
+/* ── TOGGLE PERIODO ── */
+.periodo-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 32px 0 0;
+  font-size: 14px;
+  color: var(--t3);
+}
+
+/* ── PIANI GRID ── */
+.piani-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 40px 96px;
+}
+
+.piani-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  align-items: stretch;
+}
+
+.piano-card {
+  background: var(--dark2);
+  border: 1px solid var(--bd);
+  border-radius: var(--r);
+  padding: 36px 28px;
+  display: flex;
+  flex-direction: column;
+  transition: transform .2s, border-color .2s, box-shadow .2s;
+}
+
+.piano-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--gbright);
+  box-shadow: 0 0 0 1px var(--gbright), 0 8px 32px rgba(0,200,83,.12);
+}
+
+.piano-nome {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: var(--t1);
+  margin-bottom: 6px;
+}
+
+.piano-target {
+  font-size: 13px;
+  color: var(--t3);
+  margin-bottom: 24px;
+  line-height: 1.4;
+  min-height: 36px;
+}
+
+.piano-prezzo {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 48px;
+  color: var(--t1);
+  line-height: 1;
+}
+
+.piano-prezzo span { font-size: 22px; font-weight: 700; color: var(--t2); }
+.piano-prezzo-period { font-size: 13px; color: var(--t3); margin-top: 4px; margin-bottom: 4px; }
+.piano-prezzo-mensile { font-size: 13px; color: var(--g); font-weight: 600; margin-bottom: 20px; }
+
+.piano-trial {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  color: var(--t2);
+  padding: 9px 12px;
+  background: var(--gdim);
+  border-radius: var(--rs);
+  border: 1px solid rgba(0,200,83,.12);
+  margin-bottom: 24px;
+}
+.piano-trial i { color: var(--g); flex-shrink: 0; }
+
+.piano-divider { height: 1px; background: var(--bd); margin-bottom: 20px; }
+
+.piano-features {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 28px;
+  flex: 1;
+}
+
+.piano-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  font-size: 13px;
+  color: var(--t2);
+  line-height: 1.4;
+}
+.piano-feature i { color: var(--g); font-size: 13px; margin-top: 1px; flex-shrink: 0; }
+.piano-feature.highlight { color: var(--t1); font-weight: 600; }
+
+.piano-section-lbl {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--t3);
+  margin: 16px 0 8px;
+}
+
+.btn-piano {
+  display: block;
+  text-align: center;
+  padding: 13px;
+  border-radius: 100px;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  transition: all .2s;
+  margin-top: auto;
+}
+.btn-piano-green { background: var(--g); color: #000; }
+.btn-piano-green:hover { background: var(--gbright); transform: translateY(-1px); }
+.btn-piano-outline { background: transparent; border: 1px solid var(--bd); color: var(--t1); }
+.btn-piano-outline:hover { border-color: rgba(0,200,83,.4); color: var(--g); }
+.btn-piano-ghost { background: transparent; border: 1px solid rgba(0,200,83,.3); color: var(--g); }
+.btn-piano-ghost:hover { border-color: var(--g); background: var(--gdim); }
+
+/* ── BOX INCLUSO GRATIS ── */
+.incluso-box {
+  margin-top: 32px;
+  padding: 22px 28px;
+  background: var(--gdim);
+  border: 1px solid rgba(0,200,83,.15);
+  border-radius: var(--r);
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+.incluso-box i { color: var(--g); font-size: 20px; margin-top: 2px; flex-shrink: 0; }
+.incluso-title { font-size: 15px; font-weight: 700; color: var(--t1); margin-bottom: 4px; }
+.incluso-text { font-size: 14px; color: var(--t2); line-height: 1.6; }
+.incluso-text strong { color: var(--g); }
+
+/* ── CONFRONTO ── */
+.confronto-section {
+  background: var(--dark2);
+  border-top: 1px solid var(--bd);
+  border-bottom: 1px solid var(--bd);
+  padding: 96px 40px;
+}
+.confronto-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.confronto-title {
+  font-size: clamp(32px, 4vw, 48px);
+  margin-bottom: 48px;
+}
+.confronto-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.confronto-table th {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: var(--t1);
+  padding: 12px 20px;
+  text-align: center;
+  border-bottom: 1px solid var(--bd);
+}
+.confronto-table th:first-child { text-align: left; color: var(--t3); }
+.confronto-table td {
+  padding: 14px 20px;
+  font-size: 14px;
+  color: var(--t2);
+  border-bottom: 1px solid rgba(255,255,255,.04);
+  text-align: center;
+  vertical-align: middle;
+}
+.confronto-table td:first-child {
+  text-align: left;
+  color: var(--t1);
+  font-weight: 500;
+}
+.confronto-table tr:last-child td { border-bottom: none; }
+.confronto-table tr:hover td { background: rgba(255,255,255,.02); }
+.check-yes { color: var(--g); font-size: 16px; }
+.check-no { color: var(--t3); font-size: 16px; }
+.confronto-table .cat-row td {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--t3);
+  padding-top: 24px;
+  background: transparent;
+}
+
+/* ── FAQ ── */
+.faq-section {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 96px 40px;
+}
+.faq-list { margin-top: 48px; }
+.faq-item {
+  border-bottom: 1px solid var(--bd);
+}
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 20px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--t1);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  font-family: 'Inter', sans-serif;
+  transition: color .2s;
+}
+.faq-question:hover { color: var(--g); }
+.faq-question i {
+  color: var(--t3);
+  font-size: 14px;
+  flex-shrink: 0;
+  transition: transform .25s;
+}
+.faq-item.open .faq-question i { transform: rotate(180deg); color: var(--g); }
+.faq-answer {
+  font-size: 15px;
+  color: var(--t2);
+  line-height: 1.7;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .35s ease, padding .35s ease;
+}
+.faq-item.open .faq-answer { max-height: 400px; padding-bottom: 20px; }
+.faq-answer strong { color: var(--t1); }
+.faq-answer a { color: var(--g); text-decoration: none; }
+
+/* ── CTA FINALE ── */
+.cta-finale {
+  background: linear-gradient(160deg, rgba(0,200,83,.08) 0%, transparent 60%);
+  border-top: 1px solid var(--bd);
+}
+.cta-finale-inner {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 100px 40px;
+  text-align: center;
+}
+.cta-finale h2 { font-size: clamp(40px, 6vw, 64px); margin-bottom: 20px; }
+.cta-finale p { font-size: 18px; color: var(--t2); margin-bottom: 40px; }
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--g);
+  color: #000;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 14px 28px;
+  border-radius: 100px;
+  text-decoration: none;
+  transition: background .2s, transform .15s;
+}
+.btn-primary:hover { background: var(--gbright); transform: translateY(-2px); }
+
+/* ── FOOTER ── */
+footer {
+  border-top: 1px solid var(--bd);
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.footer-logo {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 18px;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: var(--t3);
+}
+.footer-logo span { color: var(--g); }
+.footer-copy { font-size: 13px; color: var(--t3); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1000px) {
+  .piani-grid { grid-template-columns: 1fr 1fr; }
+  .confronto-section { padding: 64px 20px; }
+}
+@media (max-width: 700px) {
+  nav { padding: 14px 20px; }
+  .nav-links { display: none; }
+  .hero { padding: 100px 20px 56px; }
+  .piani-section { padding: 40px 20px 64px; }
+  .piani-grid { grid-template-columns: 1fr; }
+  .faq-section { padding: 64px 20px; }
+  .cta-finale-inner { padding: 64px 20px; }
+  footer { flex-direction: column; gap: 16px; text-align: center; padding: 32px 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="coachboard-homepage.html" class="nav-logo">THE <span>COACH</span> BOARD</a>
+  <ul class="nav-links">
+    <li><a href="come-funziona.html">Come funziona</a></li>
+    <li><a href="coachboard-homepage.html#ruoli">A chi è rivolto</a></li>
+    <li><a href="prezzi.html" class="active">Prezzi</a></li>
+    <li><a href="prezzi.html" class="nav-cta">Prova gratis</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="section-label">Prezzi</div>
+  <h1 class="display">Inizia gratis.<br><em>Poi decidi tu.</em></h1>
+  <p class="hero-sub">Il primo mese è completamente gratuito, senza carta di credito. Paghi solo se sei convinto del prodotto.</p>
+</div>
+
+<!-- PIANI -->
+<div class="piani-section">
+  <div class="piani-grid">
+
+    <!-- COACH -->
+    <div class="piano-card">
+      <div class="piano-nome">Coach</div>
+      <div class="piano-target">Per l'allenatore che vuole avere tutto della sua squadra a portata di mano.</div>
+      <div class="piano-prezzo"><span>€</span>69<span style="font-size:26px">,99</span></div>
+      <div class="piano-prezzo-period">all'anno</div>
+      <div class="piano-prezzo-mensile">≈ €7 al mese per 10 mesi di stagione</div>
+      <div class="piano-trial"><i class="fa-solid fa-gift"></i> 1 mese gratuito · nessuna carta richiesta</div>
+      <div class="piano-divider"></div>
+      <div class="piano-section-lbl">Gestione squadra</div>
+      <div class="piano-features">
+        <div class="piano-feature"><i class="fa-solid fa-check"></i> Rosa completa con profili atleti</div>
+        <div class="piano-feature"><i class="fa-solid fa-check"></i> Pianificazione allenamenti</div>
+        <div class="piano-feature"><i class="fa-solid fa-check"></i> Archivio sedute con PDF allegati</div>
+        <div class="piano-feature"><i class="fa-solid fa-check"></i> Convocazioni e gestione partite</div>
+        <div class="piano-feature"><i class="fa-solid fa-check"></i> Presenze e minutaggi per competizione</div>
+        <div class="piano-feature"><i class="fa-solid fa-check"></i> Gestione infortuni e disponibilità</div>
+        <div class="piano-section-lbl">Report e comunicazione</div>
+        <div class="piano-feature"><i class="fa-solid fa-check"></i> Report stagionali esportabili in PDF</div>
+        <div class="piano-feature"><i class="fa-solid fa-check"></i> Messaggistica interna alla squadra</div>
+        <div class="piano-feature"><i class="fa-solid fa-check"></i> Notifiche push agli atleti</div>
+        <div class="piano-section-lbl">Multi-squadra</div>
+        <div class="piano-feature"><i class="fa-solid fa-check"></i> Gestione di più squadre contemporaneamente</div>
+        <div class="piano-feature"><i class="fa-solid fa-check"></i> Ruolo assistente coach incluso</div>
+      </div>
+      <a href="#" class="btn-piano btn-piano-outline">Prova gratis 1 mese</a>
+    </div>
+
+    <!-- CLUB STARTER -->
+    <div class="piano-card">
+      <div class="piano-nome">Club Starter</div>
+      <div class="piano-target">Per le società con fino a 4 squadre che vogliono tutto sotto controllo.</div>
+      <div class="piano-prezzo"><span>€</span>399<span style="font-size:26px">,99</span></div>
+      <div class="piano-prezzo-period">all'anno</div>
+      <div class="piano-prezzo-mensile">≈ €40 al mese · fino a 4 profili Coach</div>
+      <div class="piano-trial"><i class="fa-solid fa-gift"></i> 1 mese gratuito · nessuna carta richiesta</div>
+      <div class="piano-divider"></div>
+      <div class="piano-section-lbl">Include tutto il piano Coach (×4) più</div>
+      <div class="piano-features">
+        <div class="piano-feature highlight"><i class="fa-solid fa-star"></i> Dashboard web Club Director</div>
+        <div class="piano-feature highlight"><i class="fa-solid fa-star"></i> Visione multi-squadra da browser desktop</div>
+        <div class="piano-feature highlight"><i class="fa-solid fa-star"></i> Monitoraggio attività di tutti i coach</div>
+        <div class="piano-feature highlight"><i class="fa-solid fa-star"></i> Report aggregati a livello società</div>
+        <div class="piano-feature"><i class="fa-solid fa-check"></i> Accesso Club Director da mobile e web</div>
+        <div class="piano-feature"><i class="fa-solid fa-check"></i> Fino a 4 profili Coach attivi</div>
+        <div class="piano-feature"><i class="fa-solid fa-check"></i> Profilo Atleta gratuito per tutti i giocatori</div>
+        <div class="piano-feature"><i class="fa-solid fa-check"></i> Assistente coach per ogni squadra</div>
+      </div>
+      <a href="#" class="btn-piano btn-piano-green">Prova gratis 1 mese</a>
+    </div>
+
+    <!-- CLUB PRO -->
+    <div class="piano-card">
+      <div class="piano-nome">Club Pro</div>
+      <div class="piano-target">Per le società strutturate con settori giovanili fino a 8 squadre.</div>
+      <div class="piano-prezzo"><span>€</span>699<span style="font-size:26px">,99</span></div>
+      <div class="piano-prezzo-period">all'anno</div>
+      <div class="piano-prezzo-mensile">≈ €70 al mese · fino a 8 profili Coach</div>
+      <div class="piano-trial"><i class="fa-solid fa-gift"></i> 1 mese gratuito · nessuna carta richiesta</div>
+      <div class="piano-divider"></div>
+      <div class="piano-section-lbl">Include tutto il piano Starter (×8) più</div>
+      <div class="piano-features">
+        <div class="piano-feature highlight"><i class="fa-solid fa-star"></i> Fino a 8 profili Coach attivi</div>
+        <div class="piano-feature"><i class="fa-solid fa-check"></i> Dashboard web Club Director</div>
+        <div class="piano-feature"><i class="fa-solid fa-check"></i> Visione multi-squadra da browser desktop</div>
+        <div class="piano-feature"><i class="fa-solid fa-check"></i> Monitoraggio attività di tutti i coach</div>
+        <div class="piano-feature"><i class="fa-solid fa-check"></i> Report aggregati a livello società</div>
+        <div class="piano-feature"><i class="fa-solid fa-check"></i> Profilo Atleta gratuito per tutti i giocatori</div>
+        <div class="piano-feature"><i class="fa-solid fa-check"></i> Assistente coach per ogni squadra</div>
+      </div>
+      <a href="#" class="btn-piano btn-piano-outline">Prova gratis 1 mese</a>
+    </div>
+
+    <!-- CLUB ELITE -->
+    <div class="piano-card" style="border-color:rgba(0,200,83,.15)">
+      <div class="piano-nome">Club Elite</div>
+      <div class="piano-target">Per le grandi società con più di 8 squadre. Prezzo su misura per le tue esigenze.</div>
+      <div style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:34px;color:var(--t1);line-height:1;margin-bottom:4px">Su richiesta</div>
+      <div class="piano-prezzo-period">prezzo personalizzato</div>
+      <div class="piano-prezzo-mensile">Oltre 8 profili Coach</div>
+      <div class="piano-trial"><i class="fa-solid fa-gift"></i> 1 mese gratuito · nessuna carta richiesta</div>
+      <div class="piano-divider"></div>
+      <div class="piano-section-lbl">Include tutto il piano Pro più</div>
+      <div class="piano-features">
+        <div class="piano-feature highlight"><i class="fa-solid fa-star"></i> Oltre 8 squadre</div>
+        <div class="piano-feature highlight"><i class="fa-solid fa-star"></i> Onboarding personalizzato</div>
+        <div class="piano-feature highlight"><i class="fa-solid fa-star"></i> Supporto prioritario dedicato</div>
+        <div class="piano-feature highlight"><i class="fa-solid fa-star"></i> Prezzi su misura</div>
+        <div class="piano-feature"><i class="fa-solid fa-check"></i> Dashboard web Club Director</div>
+        <div class="piano-feature"><i class="fa-solid fa-check"></i> Report aggregati a livello società</div>
+        <div class="piano-feature"><i class="fa-solid fa-check"></i> Profilo Atleta gratuito per tutti i giocatori</div>
+      </div>
+      <a href="#" class="btn-piano btn-piano-ghost">Contattaci</a>
+    </div>
+
+  </div>
+
+  <!-- BOX INCLUSO GRATIS -->
+  <div class="incluso-box">
+    <i class="fa-solid fa-circle-info"></i>
+    <div>
+      <div class="incluso-title">Cosa è sempre incluso</div>
+      <div class="incluso-text">
+        Il profilo <strong>Atleta</strong> è sempre gratuito — ogni giocatore può scaricare l'app e accedere alle proprie informazioni senza costi. Il profilo <strong>Club Director</strong> è incluso in tutti i piani Club senza costo aggiuntivo. Si paga solo per i profili Coach corrispondenti al piano che si desidera attivare.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TABELLA CONFRONTO -->
+<div class="confronto-section">
+  <div class="confronto-inner">
+    <div class="section-label">Confronto piani</div>
+    <h2 class="display confronto-title">Cosa include ogni piano</h2>
+    <table class="confronto-table">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Coach</th>
+          <th>Starter</th>
+          <th>Pro</th>
+          <th>Elite</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="cat-row"><td colspan="5">Gestione squadra</td></tr>
+        <tr><td>Rosa e profili atleti</td><td><i class="fa-solid fa-check check-yes"></i></td><td><i class="fa-solid fa-check check-yes"></i></td><td><i class="fa-solid fa-check check-yes"></i></td><td><i class="fa-solid fa-check check-yes"></i></td></tr>
+        <tr><td>Pianificazione allenamenti</td><td><i class="fa-solid fa-check check-yes"></i></td><td><i class="fa-solid fa-check check-yes"></i></td><td><i class="fa-solid fa-check check-yes"></i></td><td><i class="fa-solid fa-check check-yes"></i></td></tr>
+        <tr><td>Convocazioni e partite</td><td><i class="fa-solid fa-check check-yes"></i></td><td><i class="fa-solid fa-check check-yes"></i></td><td><i class="fa-solid fa-check check-yes"></i></td><td><i class="fa-solid fa-check check-yes"></i></td></tr>
+        <tr><td>Presenze e minutaggi</td><td><i class="fa-solid fa-check check-yes"></i></td><td><i class="fa-solid fa-check check-yes"></i></td><td><i class="fa-solid fa-check check-yes"></i></td><td><i class="fa-solid fa-check check-yes"></i></td></tr>
+        <tr><td>Gestione infortuni</td><td><i class="fa-solid fa-check check-yes"></i></td><td><i class="fa-solid fa-check check-yes"></i></td><td><i class="fa-solid fa-check check-yes"></i></td><td><i class="fa-solid fa-check check-yes"></i></td></tr>
+        <tr><td>Report PDF stagionali</td><td><i class="fa-solid fa-check check-yes"></i></td><td><i class="fa-solid fa-check check-yes"></i></td><td><i class="fa-solid fa-check check-yes"></i></td><td><i class="fa-solid fa-check check-yes"></i></td></tr>
+        <tr><td>Multi-squadra</td><td><i class="fa-solid fa-check check-yes"></i></td><td><i class="fa-solid fa-check check-yes"></i></td><td><i class="fa-solid fa-check check-yes"></i></td><td><i class="fa-solid fa-check check-yes"></i></td></tr>
+
+        <tr class="cat-row"><td colspan="5">Funzionalità Club</td></tr>
+        <tr><td>Dashboard web Club Director</td><td><i class="fa-solid fa-xmark check-no"></i></td><td><i class="fa-solid fa-check check-yes"></i></td><td><i class="fa-solid fa-check check-yes"></i></td><td><i class="fa-solid fa-check check-yes"></i></td></tr>
+        <tr><td>Monitoraggio multi-squadra</td><td><i class="fa-solid fa-xmark check-no"></i></td><td><i class="fa-solid fa-check check-yes"></i></td><td><i class="fa-solid fa-check check-yes"></i></td><td><i class="fa-solid fa-check check-yes"></i></td></tr>
+        <tr><td>Report aggregati società</td><td><i class="fa-solid fa-xmark check-no"></i></td><td><i class="fa-solid fa-check check-yes"></i></td><td><i class="fa-solid fa-check check-yes"></i></td><td><i class="fa-solid fa-check check-yes"></i></td></tr>
+        <tr><td>Accesso web e mobile Club Director</td><td><i class="fa-solid fa-xmark check-no"></i></td><td><i class="fa-solid fa-check check-yes"></i></td><td><i class="fa-solid fa-check check-yes"></i></td><td><i class="fa-solid fa-check check-yes"></i></td></tr>
+
+        <tr class="cat-row"><td colspan="5">Profili inclusi</td></tr>
+        <tr><td>Profili Coach</td><td style="color:var(--t1);font-weight:600">1</td><td style="color:var(--t1);font-weight:600">fino a 4</td><td style="color:var(--t1);font-weight:600">fino a 8</td><td style="color:var(--g);font-weight:600">illimitati</td></tr>
+        <tr><td>Profilo Club Director</td><td><i class="fa-solid fa-xmark check-no"></i></td><td><i class="fa-solid fa-check check-yes"></i></td><td><i class="fa-solid fa-check check-yes"></i></td><td><i class="fa-solid fa-check check-yes"></i></td></tr>
+        <tr><td>Profilo Atleta</td><td style="color:var(--g);font-weight:600">Gratis</td><td style="color:var(--g);font-weight:600">Gratis</td><td style="color:var(--g);font-weight:600">Gratis</td><td style="color:var(--g);font-weight:600">Gratis</td></tr>
+
+        <tr class="cat-row"><td colspan="5">Supporto</td></tr>
+        <tr><td>Supporto standard</td><td><i class="fa-solid fa-check check-yes"></i></td><td><i class="fa-solid fa-check check-yes"></i></td><td><i class="fa-solid fa-check check-yes"></i></td><td><i class="fa-solid fa-check check-yes"></i></td></tr>
+        <tr><td>Supporto dedicato</td><td><i class="fa-solid fa-xmark check-no"></i></td><td><i class="fa-solid fa-xmark check-no"></i></td><td><i class="fa-solid fa-xmark check-no"></i></td><td><i class="fa-solid fa-check check-yes"></i></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="faq-section">
+  <div class="section-label">Domande frequenti</div>
+  <h2 class="display" style="font-size:clamp(36px,5vw,52px);margin-bottom:0">Hai dei dubbi?</h2>
+
+  <div class="faq-list">
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Come funziona il mese gratuito?
+        <i class="fa-solid fa-chevron-down"></i>
+      </button>
+      <div class="faq-answer">
+        Dopo aver scaricato l'app e creato il tuo account, hai accesso completo a tutte le funzionalità del piano scelto per 30 giorni, senza inserire nessuna carta di credito. Alla scadenza del periodo gratuito riceverai una notifica e potrai scegliere se attivare l'abbonamento annuale. Se non viene attivato un abbonamento, l'account viene bloccato e non sarà possibile utilizzare l'app fino al pagamento di un piano.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Il profilo Atleta è davvero sempre gratuito?
+        <i class="fa-solid fa-chevron-down"></i>
+      </button>
+      <div class="faq-answer">
+        Sì, il profilo Atleta è sempre gratuito e non ha scadenza. Ogni giocatore può scaricare l'app, ricevere convocazioni e notifiche, visualizzare il calendario degli impegni e consultare le proprie statistiche personali senza pagare nulla. Il costo dell'abbonamento riguarda esclusivamente i profili Coach.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Cosa include esattamente il profilo Club Director?
+        <i class="fa-solid fa-chevron-down"></i>
+      </button>
+      <div class="faq-answer">
+        Il Club Director è un ruolo di supervisione incluso in tutti i piani Club (Starter, Pro, Elite) senza costo aggiuntivo. Ha accesso a una dashboard web consultabile da browser desktop, dove può vedere tutte le squadre registrate sotto il proprio club, monitorare l'attività dei coach, visualizzare presenze, report e convocazioni di ogni squadra, e accedere alle analytics stagionali aggregate. Può anche accedere all'app mobile con le stesse credenziali.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Posso cambiare piano in corso d'anno?
+        <i class="fa-solid fa-chevron-down"></i>
+      </button>
+      <div class="faq-answer">
+        Sì. Se hai bisogno di aggiungere più profili Coach puoi passare a un piano superiore in qualsiasi momento. La differenza di prezzo viene calcolata in proporzione ai mesi rimanenti dell'abbonamento. Non puoi invece passare a un piano inferiore durante il periodo di abbonamento attivo — la modifica sarà applicata al rinnovo annuale successivo.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Come funziona il pagamento per i piani Club?
+        <i class="fa-solid fa-chevron-down"></i>
+      </button>
+      <div class="faq-answer">
+        I piani Club sono disponibili solo con abbonamento annuale. Il pagamento avviene una volta all'anno tramite carta di credito o bonifico bancario. L'abbonamento copre una stagione sportiva di circa 10 mesi — da settembre a giugno — che corrisponde al ciclo naturale di utilizzo dell'app. Il rinnovo è manuale: non ci sono addebiti automatici senza il tuo consenso esplicito.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Un allenatore può gestire più squadre con un singolo profilo Coach?
+        <i class="fa-solid fa-chevron-down"></i>
+      </button>
+      <div class="faq-answer">
+        Sì. Un singolo profilo Coach permette di gestire più squadre contemporaneamente e di passare da una all'altra con un tap. Lo stesso vale per il ruolo Assistente — un assistente può supportare il coach principale di una squadra e al tempo stesso essere coach di un'altra.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Cosa succede ai dati se non rinnovo l'abbonamento?
+        <i class="fa-solid fa-chevron-down"></i>
+      </button>
+      <div class="faq-answer">
+        I tuoi dati rimangono al sicuro nel sistema anche in caso di mancato rinnovo. Potrai sempre accedere all'account in modalità di sola lettura per consultare lo storico delle stagioni precedenti. Per ricominciare a inserire dati e utilizzare tutte le funzionalità sarà sufficiente rinnovare l'abbonamento.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        L'app è disponibile anche in versione web per coach e atleti?
+        <i class="fa-solid fa-chevron-down"></i>
+      </button>
+      <div class="faq-answer">
+        L'app per Coach, Assistente e Atleta è disponibile come app nativa su <strong>iOS</strong> e <strong>Android</strong>. La versione web è dedicata esclusivamente al ruolo <strong>Club Director</strong>, che può accedere alla propria dashboard di supervisione da qualsiasi browser desktop senza installare nulla.
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- CTA FINALE -->
+<div class="cta-finale">
+  <div class="cta-finale-inner">
+    <div class="section-label" style="text-align:center">Inizia oggi</div>
+    <h2 class="display">Il primo mese<br><span style="color:var(--g)">è gratis.</span></h2>
+    <p>Nessuna carta di credito. Nessun vincolo. Prova tutto per 30 giorni.</p>
+    <a href="#" class="btn-primary">
+      <i class="fa-solid fa-futbol"></i>
+      Prova gratis 1 mese
+    </a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">THE <span>COACH</span> BOARD</div>
+  <div class="footer-copy">© 2025 The Coach Board. Tutti i diritti riservati.</div>
+</footer>
+
+<script>
+function toggleFaq(btn) {
+  const item = btn.parentElement;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+</script>
+
+</body>
+</html>
