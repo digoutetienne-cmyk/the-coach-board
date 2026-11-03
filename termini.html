@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Termini di servizio — The Coach Board</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root { --g:#00c853; --gdim:rgba(0,200,83,.10); --gbright:#00e676; --dark:#141d17; --dark2:#1b261e; --dark3:#243329; --bd:rgba(255,255,255,.08); --t1:#f0f4f1; --t2:#a8b5aa; --t3:#5a6b5c; --r:14px; --rs:8px; }
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; }
+body { font-family:'Inter',sans-serif; background:var(--dark); color:var(--t1); font-size:16px; line-height:1.6; overflow-x:hidden; }
+.display { font-family:'Barlow Condensed',sans-serif; font-weight:900; line-height:.95; letter-spacing:-.01em; text-transform:uppercase; }
+nav { position:fixed; top:0; left:0; right:0; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:16px 40px; background:rgba(8,12,9,.85); backdrop-filter:blur(12px); border-bottom:1px solid var(--bd); }
+.nav-logo { display:inline-flex; align-items:center; gap:10px; font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:20px; letter-spacing:.05em; text-transform:uppercase; color:var(--t1); text-decoration:none; }
+.nav-logo span { color:var(--g); }
+.logo-img { height:34px; width:34px; border-radius:50%; flex-shrink:0; }
+.nav-links { display:flex; align-items:center; gap:32px; list-style:none; }
+.nav-links a { color:var(--t2); text-decoration:none; font-size:14px; font-weight:500; transition:color .2s; }
+.nav-links a:hover { color:var(--t1); }
+.nav-cta { background:var(--g); color:#000 !important; font-weight:700 !important; padding:10px 22px; border-radius:100px; font-size:14px !important; }
+.nav-cta:hover { background:var(--gbright) !important; }
+.hamburger-btn { display:none; background:none; border:none; color:var(--t1); font-size:22px; cursor:pointer; padding:6px; }
+.mobile-menu { position:fixed; inset:0; background:var(--dark); z-index:200; display:none; flex-direction:column; padding:24px; }
+.mobile-menu.open { display:flex; }
+.mobile-menu-top { display:flex; align-items:center; justify-content:space-between; margin-bottom:48px; }
+.mobile-menu-close { background:none; border:none; color:var(--t1); font-size:24px; cursor:pointer; padding:6px; }
+.mobile-menu-links { display:flex; flex-direction:column; gap:8px; list-style:none; }
+.mobile-menu-links a { display:block; color:var(--t2); text-decoration:none; font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:32px; text-transform:uppercase; padding:14px 0; border-bottom:1px solid var(--bd); }
+.mobile-menu-links a.login-link { color:var(--g); }
+.mobile-menu-cta { margin-top:32px; display:block; text-align:center; background:var(--g); color:#000; font-weight:700; font-size:16px; padding:16px; border-radius:100px; text-decoration:none; }
+.hero { padding:140px 40px 40px; text-align:center; max-width:760px; margin:0 auto; }
+.section-label { font-size:11px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--g); margin-bottom:16px; }
+.hero h1 { font-size:clamp(44px,7vw,72px); margin-bottom:16px; }
+.hero p { font-size:15px; color:var(--t3); }
+.legal { max-width:820px; margin:0 auto; padding:24px 40px 96px; }
+.legal h2 { font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:26px; text-transform:uppercase; letter-spacing:.03em; color:var(--t1); margin:40px 0 12px; }
+.legal p, .legal li { font-size:15px; color:var(--t2); line-height:1.75; margin-bottom:12px; }
+.legal ul { padding-left:22px; margin-bottom:12px; }
+.legal strong { color:var(--t1); }
+.legal a { color:var(--g); }
+.legal table { width:100%; border-collapse:collapse; margin:12px 0 20px; font-size:14px; }
+.legal th, .legal td { text-align:left; padding:10px 12px; border-bottom:1px solid var(--bd); color:var(--t2); vertical-align:top; }
+.legal th { color:var(--t1); font-weight:700; }
+mark.ph { background:rgba(255,193,7,.18); color:#ffd54f; padding:1px 5px; border-radius:4px; }
+footer { border-top:1px solid var(--bd); padding:40px; display:flex; align-items:center; justify-content:space-between; max-width:1200px; margin:0 auto; }
+.footer-logo { display:inline-flex; align-items:center; gap:10px; font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:18px; letter-spacing:.05em; text-transform:uppercase; color:var(--t3); }
+.footer-logo span { color:var(--g); }
+.footer-logo .logo-img { height:28px; width:28px; }
+.footer-links { display:flex; gap:22px; flex-wrap:wrap; justify-content:center; }
+.footer-links a { color:var(--t3); font-size:13px; text-decoration:none; }
+.footer-links a:hover { color:var(--g); }
+.footer-copy { font-size:13px; color:var(--t3); text-align:right; }
+@media (max-width:900px) {
+  nav { padding:14px 20px; } .nav-links { display:none; } .hamburger-btn { display:block; }
+  .hero { padding:100px 20px 24px; } .legal { padding:16px 20px 64px; }
+  footer { flex-direction:column; gap:16px; text-align:center; padding:32px 20px; } .footer-copy { text-align:center; }
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo"><img class="logo-img" src="logo-tcb.png" alt="The Coach Board">THE <span>COACH</span> BOARD</a>
+  <ul class="nav-links">
+    <li><a href="come-funziona.html">Come funziona</a></li>
+    <li><a href="chi-siamo.html">Chi siamo</a></li>
+    <li><a href="prezzi.html">Prezzi</a></li>
+    <li><a href="contatti.html">Contatti</a></li>
+    <li><a href="https://coach-board-admin.vercel.app/">Accedi</a></li>
+    <li><a href="https://coach-board-admin.vercel.app/register" class="nav-cta">Prova gratis</a></li>
+  </ul>
+  <button class="hamburger-btn" onclick="document.getElementById('mobile-menu').classList.add('open')">&#9776;</button>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <div class="mobile-menu-top">
+    <a href="index.html" class="nav-logo"><img class="logo-img" src="logo-tcb.png" alt="The Coach Board">THE <span>COACH</span> BOARD</a>
+    <button class="mobile-menu-close" onclick="document.getElementById('mobile-menu').classList.remove('open')">&#10005;</button>
+  </div>
+  <ul class="mobile-menu-links">
+    <li><a href="come-funziona.html">Come funziona</a></li>
+    <li><a href="chi-siamo.html">Chi siamo</a></li>
+    <li><a href="prezzi.html">Prezzi</a></li>
+    <li><a href="contatti.html">Contatti</a></li>
+    <li><a href="https://coach-board-admin.vercel.app/" class="login-link">Accedi</a></li>
+  </ul>
+  <a href="https://coach-board-admin.vercel.app/register" class="mobile-menu-cta">Prova gratis 1 mese</a>
+</div>
+<div class="hero">
+  <div class="section-label">Documenti legali</div>
+  <h1 class="display">Termini di<br><em style='font-style:normal;color:var(--g)'>servizio</em></h1>
+  <p>Ultimo aggiornamento: <mark class="ph">[data]</mark></p>
+</div>
+<div class="legal">
+
+<p>I presenti Termini regolano l'uso di The Coach Board (sito, portale web e app mobile), fornito da <mark class="ph">[Nome e cognome / ragione sociale]</mark>, P.IVA <mark class="ph">[numero]</mark>, con sede in <mark class="ph">[indirizzo]</mark>, email <mark class="ph">[email per la privacy]</mark> (il "Fornitore").</p>
+
+<h2>1. Il servizio</h2>
+<p>The Coach Board è una piattaforma per allenatori, giocatori e società sportive per gestire stagione, allenamenti, presenze, convocazioni e comunicazioni. La registrazione, l'acquisto e la gestione dell'abbonamento di Club Director e Coach avvengono sul portale web. L'app mobile consente l'accesso agli utenti già registrati e la creazione dell'account agli utenti invitati.</p>
+
+<h2>2. Ruoli e account</h2>
+<ul>
+<li><strong>Club Director e Coach</strong> creano l'account sul portale web, sottoscrivono l'abbonamento e ne sono responsabili.</li>
+<li><strong>Assistant Coach, coach invitati e Giocatori</strong> non pagano: accedono con un codice di invito fornito dal Director o dal Coach. Il loro accesso dipende dall'abbonamento di chi li ha invitati.</li>
+<li>Ogni utente è responsabile della riservatezza delle proprie credenziali e della veridicità dei dati inseriti.</li>
+<li>Director e Coach che inseriscono dati di terzi (giocatori, famiglie, collaboratori) dichiarano di averne titolo e di aver acquisito i consensi necessari, in particolare per i minori.</li>
+</ul>
+
+<h2>3. Piani e prezzi</h2>
+<p>I piani disponibili sono: <strong>Coach</strong> (€69,99 all'anno), <strong>Club Starter</strong> (€399,99 all'anno, fino a 4 coach), <strong>Club Pro</strong> (€699,99 all'anno, fino a 8 coach) e <strong>Club Elite</strong> (su richiesta, condizioni concordate con il Fornitore). I posti si riferiscono ai coach, non alle squadre. Gli abbonamenti sono annuali. Prezzi annuali per ora; <mark class="ph">[IVA inclusa/esclusa: da confermare]</mark>.</p>
+
+<h2>4. Prova gratuita</h2>
+<p>I nuovi Director e Coach hanno diritto a un mese di prova gratuita, senza carta di credito. Al termine della prova, per continuare a usare il servizio occorre scegliere un piano e pagare.</p>
+
+<h2>5. Pagamenti e rinnovo</h2>
+<p>I pagamenti con carta sono gestiti da Stripe sul portale web. L'abbonamento si rinnova automaticamente ogni anno, salvo disdetta. Per il piano Club Elite, e dove concordato, il pagamento può avvenire con bonifico bancario, verificato dal Fornitore.</p>
+
+<h2>6. Disdetta</h2>
+<p>Puoi disdire in qualsiasi momento dal portale web. La disdetta ha effetto alla fine del periodo già pagato; non sono previsti rimborsi per il periodo in corso, salvo quanto previsto dalla legge.</p>
+
+<h2>7. Pagamento non riuscito, tolleranza e sola lettura</h2>
+<p>In caso di abbonamento scaduto, disdetto o di pagamento non riuscito, l'account entra in un periodo di tolleranza di 14 giorni, durante il quale ricevi avvisi via email. Terminata la tolleranza senza regolarizzazione, l'account e quelli degli utenti collegati passano in modalità sola lettura: i dati restano visibili ma non sono modificabili e <mark class="ph">[non è possibile esportarli: da confermare]</mark>. Il pagamento riattiva il servizio completo.</p>
+
+<h2>8. Diritto di recesso</h2>
+<p><mark class="ph">[Da verificare con un professionista: per i consumatori la legge prevede un diritto di recesso di 14 giorni per i contratti a distanza, con le eccezioni previste per i servizi digitali già avviati. Per professionisti e società tale diritto non si applica.]</mark></p>
+
+<h2>9. Uso consentito</h2>
+<p>È vietato usare il servizio per scopi illeciti, caricare contenuti offensivi o illegittimi, tentare di accedere ad account altrui o compromettere la sicurezza della piattaforma. Il Fornitore può sospendere gli account che violano i Termini.</p>
+
+<h2>10. Contenuti e dati</h2>
+<p>I dati inseriti restano di proprietà degli utenti. Concedi al Fornitore il diritto di trattarli per erogare il servizio, come descritto nell'<a href="privacy.html">Informativa privacy</a>.</p>
+
+<h2>11. Disponibilità e responsabilità</h2>
+<p>Il Fornitore si impegna a mantenere il servizio disponibile ma non garantisce l'assenza di interruzioni. Nei limiti di legge, non risponde dei danni indiretti né della perdita di dati non causata da sua colpa grave. Le funzioni su salute e infortuni sono di supporto organizzativo e non sostituiscono il parere medico.</p>
+
+<h2>12. Modifiche</h2>
+<p>I Termini e i prezzi possono cambiare. Le modifiche sostanziali saranno comunicate con ragionevole anticipo; chi è già abbonato mantiene il prezzo sottoscritto finché resta abbonato.</p>
+
+<h2>13. Legge applicabile e foro</h2>
+<p>I Termini sono regolati dalla legge italiana. Per i consumatori è competente il foro di residenza o domicilio; negli altri casi, il foro di <mark class="ph">[città]</mark>. Per le controversie con consumatori è disponibile la piattaforma europea di risoluzione online delle controversie.</p>
+
+<h2>14. Contatti</h2>
+<p>Per qualsiasi richiesta: <a href="mailto:info@thecoachboard.it">info@thecoachboard.it</a>.</p>
+
+</div>
+<footer>
+  <div class="footer-logo"><img class="logo-img" src="logo-tcb.png" alt="The Coach Board">THE <span>COACH</span> BOARD</div>
+  <div class="footer-links">
+    <a href="privacy.html">Privacy</a>
+    <a href="termini.html">Termini di servizio</a>
+    <a href="cookie.html">Cookie</a>
+    <a href="contatti.html">Contatti</a>
+  </div>
+  <div class="footer-copy">© 2026 The Coach Board. Tutti i diritti riservati.</div>
+</footer>
+</body>
+</html>

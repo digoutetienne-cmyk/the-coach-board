@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Chi siamo — The Coach Board</title>
+<link rel="icon" type="image/png" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -462,26 +463,41 @@ footer {
   .hamburger-btn { display: block; }
 }
 
+
+/* ── AGGIORNAMENTO NOV 2026 ── */
+@media (min-width: 901px) { .team-grid { grid-template-columns: repeat(2, 1fr); max-width: 620px; } }
+.nav-logo { display: inline-flex; align-items: center; gap: 10px; }
+.logo-img { height: 34px; width: 34px; border-radius: 50%; flex-shrink: 0; }
+.footer-logo { display: inline-flex; align-items: center; gap: 10px; }
+.footer-logo .logo-img { height: 28px; width: 28px; }
+.footer-links { display: flex; gap: 22px; flex-wrap: wrap; justify-content: center; }
+.footer-links a { color: var(--t3); font-size: 13px; text-decoration: none; transition: color .2s; }
+.footer-links a:hover { color: var(--g); }
+.footer-copy { text-align: right; }
+.prezzi-note { margin-top: 20px; font-size: 13px; color: var(--t3); text-align: center; line-height: 1.5; }
+.mobile-menu-links a.login-link { color: var(--g); }
+@media (max-width: 900px) { .footer-copy { text-align: center; } }
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
-  <a href="index.html" class="nav-logo">THE <span>COACH</span> BOARD</a>
+  <a href="index.html" class="nav-logo"><img class="logo-img" src="logo-tcb.png" alt="The Coach Board">THE <span>COACH</span> BOARD</a>
   <ul class="nav-links">
     <li><a href="come-funziona.html">Come funziona</a></li>
     <li><a href="chi-siamo.html" class="active">Chi siamo</a></li>
     <li><a href="prezzi.html">Prezzi</a></li>
     <li><a href="contatti.html">Contatti</a></li>
-    <li><a href="prezzi.html" class="nav-cta">Prova gratis</a></li>
+    <li><a href="https://coach-board-admin.vercel.app/">Accedi</a></li>
+    <li><a href="https://coach-board-admin.vercel.app/register" class="nav-cta">Prova gratis</a></li>
   </ul>
 <button class="hamburger-btn" onclick="openMobileMenu()"><i class="fa-solid fa-bars"></i></button>
 </nav>
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobile-menu">
   <div class="mobile-menu-top">
-    <a href="index.html" class="nav-logo">THE <span>COACH</span> BOARD</a>
+    <a href="index.html" class="nav-logo"><img class="logo-img" src="logo-tcb.png" alt="The Coach Board">THE <span>COACH</span> BOARD</a>
     <button class="mobile-menu-close" onclick="closeMobileMenu()"><i class="fa-solid fa-xmark"></i></button>
   </div>
   <ul class="mobile-menu-links">
@@ -489,8 +505,9 @@ footer {
     <li><a href="chi-siamo.html" class="active">Chi siamo</a></li>
     <li><a href="prezzi.html" class="">Prezzi</a></li>
     <li><a href="contatti.html" class="">Contatti</a></li>
+    <li><a href="https://coach-board-admin.vercel.app/" class="login-link">Accedi</a></li>
   </ul>
-  <a href="prezzi.html" class="mobile-menu-cta">Prova gratis 1 mese</a>
+  <a href="https://coach-board-admin.vercel.app/register" class="mobile-menu-cta">Prova gratis 1 mese</a>
 </div>
 
 
@@ -591,17 +608,9 @@ footer {
     <!-- INVESTITORE 1 -->
     <div class="team-card">
       <div class="team-avatar-placeholder">💼</div>
-      <div class="team-nome">Partner Investitore</div>
+      <div class="team-nome">Digout Mathieu</div>
       <div class="team-ruolo">Investor &amp; Advisor</div>
       <div class="team-bio">Imprenditore con esperienza nel settore tecnologico e sportivo. Ha supportato il progetto fin dalle prime fasi credendo nel potenziale del mercato italiano.</div>
-    </div>
-
-    <!-- INVESTITORE 2 -->
-    <div class="team-card">
-      <div class="team-avatar-placeholder">📊</div>
-      <div class="team-nome">Partner Investitore</div>
-      <div class="team-ruolo">Investor &amp; Advisor</div>
-      <div class="team-bio">Background in finanza e sviluppo business. Contribuisce alla strategia di crescita e all'espansione del progetto nel mercato delle società sportive.</div>
     </div>
 
   </div>
@@ -613,7 +622,7 @@ footer {
     <div class="section-label" style="text-align:center">Inizia oggi</div>
     <h2 class="display">Prova l'app che<br><span style="color:var(--g)">mancava.</span></h2>
     <p>Il primo mese è completamente gratuito. Nessuna carta di credito richiesta.</p>
-    <a href="prezzi.html" class="btn-primary">
+    <a href="https://coach-board-admin.vercel.app/register" class="btn-primary">
       <i class="fa-solid fa-futbol"></i>
       Prova gratis 1 mese
     </a>
@@ -622,8 +631,15 @@ footer {
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">THE <span>COACH</span> BOARD</div>
-  <div class="footer-copy">© 2025 The Coach Board. Tutti i diritti riservati.</div>
+  <div class="footer-logo"><img class="logo-img" src="logo-tcb.png" alt="The Coach Board">THE <span>COACH</span> BOARD</div>
+  <div class="footer-links">
+    <a href="privacy.html">Privacy</a>
+    <a href="termini.html">Termini di servizio</a>
+    <a href="cookie.html">Cookie</a>
+    <a href="contatti.html">Contatti</a>
+  </div>
+  <div class="footer-copy">© 2026 The Coach Board. Tutti i diritti riservati.</div>
+  <!-- TODO (dopo l'apertura della partita IVA): aggiungere qui ragione sociale, P.IVA, indirizzo -->
 </footer>
 
 

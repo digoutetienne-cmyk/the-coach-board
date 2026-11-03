@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Come funziona — The Coach Board</title>
+<link rel="icon" type="image/png" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -582,26 +583,40 @@ footer {
   .hamburger-btn { display: block; }
 }
 
+
+/* ── AGGIORNAMENTO NOV 2026 ── */
+.nav-logo { display: inline-flex; align-items: center; gap: 10px; }
+.logo-img { height: 34px; width: 34px; border-radius: 50%; flex-shrink: 0; }
+.footer-logo { display: inline-flex; align-items: center; gap: 10px; }
+.footer-logo .logo-img { height: 28px; width: 28px; }
+.footer-links { display: flex; gap: 22px; flex-wrap: wrap; justify-content: center; }
+.footer-links a { color: var(--t3); font-size: 13px; text-decoration: none; transition: color .2s; }
+.footer-links a:hover { color: var(--g); }
+.footer-copy { text-align: right; }
+.prezzi-note { margin-top: 20px; font-size: 13px; color: var(--t3); text-align: center; line-height: 1.5; }
+.mobile-menu-links a.login-link { color: var(--g); }
+@media (max-width: 900px) { .footer-copy { text-align: center; } }
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
-  <a href="index.html" class="nav-logo">THE <span>COACH</span> BOARD</a>
+  <a href="index.html" class="nav-logo"><img class="logo-img" src="logo-tcb.png" alt="The Coach Board">THE <span>COACH</span> BOARD</a>
   <ul class="nav-links">
     <li><a href="come-funziona.html" class="active">Come funziona</a></li>
     <li><a href="chi-siamo.html">Chi siamo</a></li>
     <li><a href="prezzi.html">Prezzi</a></li>
     <li><a href="contatti.html">Contatti</a></li>
-    <li><a href="prezzi.html" class="nav-cta">Prova gratis</a></li>
+    <li><a href="https://coach-board-admin.vercel.app/">Accedi</a></li>
+    <li><a href="https://coach-board-admin.vercel.app/register" class="nav-cta">Prova gratis</a></li>
   </ul>
 <button class="hamburger-btn" onclick="openMobileMenu()"><i class="fa-solid fa-bars"></i></button>
 </nav>
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobile-menu">
   <div class="mobile-menu-top">
-    <a href="index.html" class="nav-logo">THE <span>COACH</span> BOARD</a>
+    <a href="index.html" class="nav-logo"><img class="logo-img" src="logo-tcb.png" alt="The Coach Board">THE <span>COACH</span> BOARD</a>
     <button class="mobile-menu-close" onclick="closeMobileMenu()"><i class="fa-solid fa-xmark"></i></button>
   </div>
   <ul class="mobile-menu-links">
@@ -609,8 +624,9 @@ footer {
     <li><a href="chi-siamo.html" class="">Chi siamo</a></li>
     <li><a href="prezzi.html" class="">Prezzi</a></li>
     <li><a href="contatti.html" class="">Contatti</a></li>
+    <li><a href="https://coach-board-admin.vercel.app/" class="login-link">Accedi</a></li>
   </ul>
-  <a href="prezzi.html" class="mobile-menu-cta">Prova gratis 1 mese</a>
+  <a href="https://coach-board-admin.vercel.app/register" class="mobile-menu-cta">Prova gratis 1 mese</a>
 </div>
 
 
@@ -629,13 +645,14 @@ footer {
     <div class="step-content">
       <div class="step-num">01</div>
       <div class="step-label">Inizia subito</div>
-      <h2 class="display step-title">Crea la tua squadra e tieni tutto sotto controllo</h2>
-      <p class="step-desc">Apri l'app, crea la tua squadra e aggiungi i giocatori in pochi minuti. Dalla home hai subito una visione completa — il prossimo allenamento, le presenze stagionali, le ultime attività.</p>
+      <h2 class="display step-title">Registrati, crea la tua squadra e tieni tutto sotto controllo</h2>
+      <p class="step-desc">Registrati sul portale web come Coach o Club Director: il primo mese è gratis, senza carta di credito. Poi accedi all'app, crea la tua squadra e aggiungi i giocatori in pochi minuti. Dalla home hai subito una visione completa — il prossimo allenamento, le presenze stagionali, le ultime attività.</p>
       <div class="step-features">
         <div class="step-feature"><i class="fa-solid fa-check"></i> Dashboard con statistiche immediate</div>
         <div class="step-feature"><i class="fa-solid fa-check"></i> Calendario allenamenti e partite</div>
         <div class="step-feature"><i class="fa-solid fa-check"></i> Attività recente sempre aggiornata</div>
         <div class="step-feature"><i class="fa-solid fa-check"></i> Multi-squadra: passa da un team all'altro in un tap</div>
+        <div class="step-feature"><i class="fa-solid fa-check"></i> Invita assistenti e giocatori con un codice: per loro è sempre gratis</div>
       </div>
     </div>
     <div class="phone-wrap">
@@ -740,9 +757,9 @@ footer {
 <!-- DISPONIBILE SU -->
 <div class="disponibile">
   <div>
-    <div class="section-label">Disponibile su</div>
+    <div class="section-label">In arrivo su</div>
     <h2 class="display" style="font-size:clamp(36px,5vw,52px);margin-bottom:16px">iOS, Android<br>e <em style="font-style:normal;color:var(--g)">browser web</em></h2>
-    <p style="font-size:17px;color:var(--t2);line-height:1.7;margin-bottom:8px">L'app è disponibile su App Store e Google Play per iOS e Android. Il pannello Società è accessibile da qualsiasi browser desktop, senza installare nulla.</p>
+    <p style="font-size:17px;color:var(--t2);line-height:1.7;margin-bottom:8px">L'app arriva presto su App Store e Google Play per iOS e Android. Il portale web, dove ti registri e gestisci abbonamento e club, è accessibile da qualsiasi browser, senza installare nulla.</p>
     <p style="font-size:14px;color:var(--t3);margin-bottom:28px">Tutti i dati sono sincronizzati in tempo reale su tutti i dispositivi.</p>
     <div class="store-buttons">
       <a href="javascript:void(0)" class="store-btn" style="opacity:.55;cursor:default;pointer-events:none" aria-disabled="true">
@@ -777,7 +794,7 @@ footer {
     <div class="section-label" style="text-align:center">Inizia oggi</div>
     <h2 class="display">Pronto a<br><span style="color:var(--g)">provarlo?</span></h2>
     <p>Il primo mese è completamente gratuito. Nessuna carta di credito richiesta.</p>
-    <a href="prezzi.html" class="btn-primary">
+    <a href="https://coach-board-admin.vercel.app/register" class="btn-primary">
       <i class="fa-solid fa-futbol"></i>
       Prova gratis 1 mese
     </a>
@@ -790,8 +807,15 @@ footer {
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">THE <span>COACH</span> BOARD</div>
-  <div class="footer-copy">© 2025 The Coach Board. Tutti i diritti riservati.</div>
+  <div class="footer-logo"><img class="logo-img" src="logo-tcb.png" alt="The Coach Board">THE <span>COACH</span> BOARD</div>
+  <div class="footer-links">
+    <a href="privacy.html">Privacy</a>
+    <a href="termini.html">Termini di servizio</a>
+    <a href="cookie.html">Cookie</a>
+    <a href="contatti.html">Contatti</a>
+  </div>
+  <div class="footer-copy">© 2026 The Coach Board. Tutti i diritti riservati.</div>
+  <!-- TODO (dopo l'apertura della partita IVA): aggiungere qui ragione sociale, P.IVA, indirizzo -->
 </footer>
 
 

@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Prezzi — The Coach Board</title>
+<link rel="icon" type="image/png" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -366,7 +367,7 @@ nav {
   overflow: hidden;
   transition: max-height .35s ease, padding .35s ease;
 }
-.faq-item.open .faq-answer { max-height: 400px; padding-bottom: 20px; }
+.faq-item.open .faq-answer { max-height: 700px; padding-bottom: 20px; }
 .faq-answer strong { color: var(--t1); }
 .faq-answer a { color: var(--g); text-decoration: none; }
 
@@ -515,26 +516,40 @@ footer {
   .hamburger-btn { display: block; }
 }
 
+
+/* ── AGGIORNAMENTO NOV 2026 ── */
+.nav-logo { display: inline-flex; align-items: center; gap: 10px; }
+.logo-img { height: 34px; width: 34px; border-radius: 50%; flex-shrink: 0; }
+.footer-logo { display: inline-flex; align-items: center; gap: 10px; }
+.footer-logo .logo-img { height: 28px; width: 28px; }
+.footer-links { display: flex; gap: 22px; flex-wrap: wrap; justify-content: center; }
+.footer-links a { color: var(--t3); font-size: 13px; text-decoration: none; transition: color .2s; }
+.footer-links a:hover { color: var(--g); }
+.footer-copy { text-align: right; }
+.prezzi-note { margin-top: 20px; font-size: 13px; color: var(--t3); text-align: center; line-height: 1.5; }
+.mobile-menu-links a.login-link { color: var(--g); }
+@media (max-width: 900px) { .footer-copy { text-align: center; } }
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
-  <a href="index.html" class="nav-logo">THE <span>COACH</span> BOARD</a>
+  <a href="index.html" class="nav-logo"><img class="logo-img" src="logo-tcb.png" alt="The Coach Board">THE <span>COACH</span> BOARD</a>
   <ul class="nav-links">
     <li><a href="come-funziona.html">Come funziona</a></li>
     <li><a href="chi-siamo.html">Chi siamo</a></li>
     <li><a href="prezzi.html" class="active">Prezzi</a></li>
     <li><a href="contatti.html">Contatti</a></li>
-    <li><a href="prezzi.html" class="nav-cta">Prova gratis</a></li>
+    <li><a href="https://coach-board-admin.vercel.app/">Accedi</a></li>
+    <li><a href="https://coach-board-admin.vercel.app/register" class="nav-cta">Prova gratis</a></li>
   </ul>
 <button class="hamburger-btn" onclick="openMobileMenu()"><i class="fa-solid fa-bars"></i></button>
 </nav>
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobile-menu">
   <div class="mobile-menu-top">
-    <a href="index.html" class="nav-logo">THE <span>COACH</span> BOARD</a>
+    <a href="index.html" class="nav-logo"><img class="logo-img" src="logo-tcb.png" alt="The Coach Board">THE <span>COACH</span> BOARD</a>
     <button class="mobile-menu-close" onclick="closeMobileMenu()"><i class="fa-solid fa-xmark"></i></button>
   </div>
   <ul class="mobile-menu-links">
@@ -542,8 +557,9 @@ footer {
     <li><a href="chi-siamo.html" class="">Chi siamo</a></li>
     <li><a href="prezzi.html" class="active">Prezzi</a></li>
     <li><a href="contatti.html" class="">Contatti</a></li>
+    <li><a href="https://coach-board-admin.vercel.app/" class="login-link">Accedi</a></li>
   </ul>
-  <a href="prezzi.html" class="mobile-menu-cta">Prova gratis 1 mese</a>
+  <a href="https://coach-board-admin.vercel.app/register" class="mobile-menu-cta">Prova gratis 1 mese</a>
 </div>
 
 
@@ -583,19 +599,19 @@ footer {
         <div class="piano-feature"><i class="fa-solid fa-check"></i> Gestione di più squadre contemporaneamente</div>
         <div class="piano-feature"><i class="fa-solid fa-check"></i> Ruolo assistente coach incluso</div>
       </div>
-      <a href="contatti.html" class="btn-piano btn-piano-outline">Prova gratis 1 mese</a>
+      <a href="https://coach-board-admin.vercel.app/register" class="btn-piano btn-piano-outline">Prova gratis 1 mese</a>
     </div>
 
     <!-- CLUB STARTER -->
     <div class="piano-card">
       <div class="piano-nome">Club Starter</div>
-      <div class="piano-target">Per le società con fino a 4 squadre che vogliono tutto sotto controllo.</div>
+      <div class="piano-target">Per le società con fino a 4 coach che vogliono tutto sotto controllo.</div>
       <div class="piano-prezzo"><span>€</span>399<span style="font-size:26px">,99</span></div>
       <div class="piano-prezzo-period">all'anno</div>
       <div class="piano-prezzo-mensile">≈ €40 al mese · fino a 4 profili Coach</div>
       <div class="piano-trial"><i class="fa-solid fa-gift"></i> 1 mese gratuito · nessuna carta richiesta</div>
       <div class="piano-divider"></div>
-      <div class="piano-section-lbl">Include tutto il piano Coach (×4) più</div>
+      <div class="piano-section-lbl">Include tutto il piano Coach (per 4 coach) più</div>
       <div class="piano-features">
         <div class="piano-feature highlight"><i class="fa-solid fa-star"></i> Dashboard web Club Director</div>
         <div class="piano-feature highlight"><i class="fa-solid fa-star"></i> Visione multi-squadra da browser desktop</div>
@@ -606,19 +622,19 @@ footer {
         <div class="piano-feature"><i class="fa-solid fa-check"></i> Profilo Atleta gratuito per tutti i giocatori</div>
         <div class="piano-feature"><i class="fa-solid fa-check"></i> Assistente coach per ogni squadra</div>
       </div>
-      <a href="contatti.html" class="btn-piano btn-piano-green">Prova gratis 1 mese</a>
+      <a href="https://coach-board-admin.vercel.app/register" class="btn-piano btn-piano-green">Prova gratis 1 mese</a>
     </div>
 
     <!-- CLUB PRO -->
     <div class="piano-card">
       <div class="piano-nome">Club Pro</div>
-      <div class="piano-target">Per le società strutturate con settori giovanili fino a 8 squadre.</div>
+      <div class="piano-target">Per le società strutturate con settori giovanili fino a 8 coach.</div>
       <div class="piano-prezzo"><span>€</span>699<span style="font-size:26px">,99</span></div>
       <div class="piano-prezzo-period">all'anno</div>
       <div class="piano-prezzo-mensile">≈ €70 al mese · fino a 8 profili Coach</div>
       <div class="piano-trial"><i class="fa-solid fa-gift"></i> 1 mese gratuito · nessuna carta richiesta</div>
       <div class="piano-divider"></div>
-      <div class="piano-section-lbl">Include tutto il piano Starter (×8) più</div>
+      <div class="piano-section-lbl">Include tutto il piano Starter (fino a 8 coach) più</div>
       <div class="piano-features">
         <div class="piano-feature highlight"><i class="fa-solid fa-star"></i> Fino a 8 profili Coach attivi</div>
         <div class="piano-feature"><i class="fa-solid fa-check"></i> Dashboard web Club Director</div>
@@ -628,21 +644,21 @@ footer {
         <div class="piano-feature"><i class="fa-solid fa-check"></i> Profilo Atleta gratuito per tutti i giocatori</div>
         <div class="piano-feature"><i class="fa-solid fa-check"></i> Assistente coach per ogni squadra</div>
       </div>
-      <a href="contatti.html" class="btn-piano btn-piano-outline">Prova gratis 1 mese</a>
+      <a href="https://coach-board-admin.vercel.app/register" class="btn-piano btn-piano-outline">Prova gratis 1 mese</a>
     </div>
 
     <!-- CLUB ELITE -->
     <div class="piano-card" style="border-color:rgba(0,200,83,.15)">
       <div class="piano-nome">Club Elite</div>
-      <div class="piano-target">Per le grandi società con più di 8 squadre. Prezzo su misura per le tue esigenze.</div>
+      <div class="piano-target">Per le grandi società con più di 8 coach. Prezzo e condizioni concordati con te.</div>
       <div style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:34px;color:var(--t1);line-height:1;margin-bottom:4px">Su richiesta</div>
       <div class="piano-prezzo-period">prezzo personalizzato</div>
-      <div class="piano-prezzo-mensile">Oltre 8 profili Coach</div>
-      <div class="piano-trial"><i class="fa-solid fa-gift"></i> 1 mese gratuito · nessuna carta richiesta</div>
+      <div class="piano-prezzo-mensile">Coach e squadre concordati con te</div>
+      <div class="piano-trial"><i class="fa-solid fa-handshake"></i> Attivazione e condizioni concordate con noi</div>
       <div class="piano-divider"></div>
       <div class="piano-section-lbl">Include tutto il piano Pro più</div>
       <div class="piano-features">
-        <div class="piano-feature highlight"><i class="fa-solid fa-star"></i> Oltre 8 squadre</div>
+        <div class="piano-feature highlight"><i class="fa-solid fa-star"></i> Numero di coach e squadre concordato</div>
         <div class="piano-feature highlight"><i class="fa-solid fa-star"></i> Onboarding personalizzato</div>
         <div class="piano-feature highlight"><i class="fa-solid fa-star"></i> Supporto prioritario dedicato</div>
         <div class="piano-feature highlight"><i class="fa-solid fa-star"></i> Prezzi su misura</div>
@@ -665,6 +681,7 @@ footer {
       </div>
     </div>
   </div>
+  <p class="prezzi-note">Prezzi annuali per ora. Pagamento con carta tramite Stripe, rinnovo automatico ogni anno, disdetta in qualsiasi momento dal portale.</p>
 </div>
 
 <!-- TABELLA CONFRONTO -->
@@ -699,7 +716,7 @@ footer {
         <tr><td>Accesso web e mobile Club Director</td><td><i class="fa-solid fa-xmark check-no"></i></td><td><i class="fa-solid fa-check check-yes"></i></td><td><i class="fa-solid fa-check check-yes"></i></td><td><i class="fa-solid fa-check check-yes"></i></td></tr>
 
         <tr class="cat-row"><td colspan="5">Profili inclusi</td></tr>
-        <tr><td>Profili Coach</td><td style="color:var(--t1);font-weight:600">1</td><td style="color:var(--t1);font-weight:600">fino a 4</td><td style="color:var(--t1);font-weight:600">fino a 8</td><td style="color:var(--g);font-weight:600">illimitati</td></tr>
+        <tr><td>Profili Coach</td><td style="color:var(--t1);font-weight:600">1</td><td style="color:var(--t1);font-weight:600">fino a 4</td><td style="color:var(--t1);font-weight:600">fino a 8</td><td style="color:var(--g);font-weight:600">concordati</td></tr>
         <tr><td>Profilo Club Director</td><td><i class="fa-solid fa-xmark check-no"></i></td><td><i class="fa-solid fa-check check-yes"></i></td><td><i class="fa-solid fa-check check-yes"></i></td><td><i class="fa-solid fa-check check-yes"></i></td></tr>
         <tr><td>Profilo Atleta</td><td style="color:var(--g);font-weight:600">Gratis</td><td style="color:var(--g);font-weight:600">Gratis</td><td style="color:var(--g);font-weight:600">Gratis</td><td style="color:var(--g);font-weight:600">Gratis</td></tr>
 
@@ -724,7 +741,7 @@ footer {
         <i class="fa-solid fa-chevron-down"></i>
       </button>
       <div class="faq-answer">
-        Dopo aver scaricato l'app e creato il tuo account, hai accesso completo a tutte le funzionalità del piano scelto per 30 giorni, senza inserire nessuna carta di credito. Alla scadenza del periodo gratuito riceverai una notifica e potrai scegliere se attivare l'abbonamento annuale. Se non viene attivato un abbonamento, l'account viene bloccato e non sarà possibile utilizzare l'app fino al pagamento di un piano.
+        Ti registri sul <strong>portale web</strong> come Coach o Club Director e il mese gratuito parte subito, senza inserire nessuna carta di credito. Hai accesso completo alle funzionalità del piano per 30 giorni. Prima della scadenza ricevi un'email: per continuare scegli un piano e paghi dal portale. Se non attivi l'abbonamento hai <strong>14 giorni di tolleranza</strong>, poi l'account passa in modalità di sola lettura.
       </div>
     </div>
 
@@ -734,7 +751,7 @@ footer {
         <i class="fa-solid fa-chevron-down"></i>
       </button>
       <div class="faq-answer">
-        Sì, il profilo Atleta è sempre gratuito e non ha scadenza. Ogni giocatore può scaricare l'app, ricevere convocazioni e notifiche, visualizzare il calendario degli impegni e consultare le proprie statistiche personali senza pagare nulla. Il costo dell'abbonamento riguarda esclusivamente i profili Coach.
+        Sì, il profilo Atleta è sempre gratuito e non ha scadenza. Il giocatore scarica l'app e crea il proprio account con il <strong>codice di invito</strong> del suo coach o della società: poi riceve convocazioni e notifiche, vede il calendario degli impegni e consulta le proprie statistiche, senza pagare nulla. Lo stesso vale per gli assistenti. Il costo dell'abbonamento riguarda esclusivamente i profili Coach.
       </div>
     </div>
 
@@ -754,7 +771,7 @@ footer {
         <i class="fa-solid fa-chevron-down"></i>
       </button>
       <div class="faq-answer">
-        Sì. Se hai bisogno di aggiungere più profili Coach puoi passare a un piano superiore in qualsiasi momento. La differenza di prezzo viene calcolata in proporzione ai mesi rimanenti dell'abbonamento. Non puoi invece passare a un piano inferiore durante il periodo di abbonamento attivo — la modifica sarà applicata al rinnovo annuale successivo.
+        Sì, quando hai bisogno di più profili Coach puoi passare a un piano superiore dal portale web. Per le modifiche di piano e le condizioni di cambio, <a href="contatti.html">scrivici</a> e ti aiutiamo.
       </div>
     </div>
 
@@ -764,7 +781,7 @@ footer {
         <i class="fa-solid fa-chevron-down"></i>
       </button>
       <div class="faq-answer">
-        I piani Club sono disponibili solo con abbonamento annuale. Il pagamento avviene una volta all'anno tramite carta di credito o bonifico bancario. L'abbonamento copre una stagione sportiva di circa 10 mesi — da settembre a giugno — che corrisponde al ciclo naturale di utilizzo dell'app. Il rinnovo è manuale: non ci sono addebiti automatici senza il tuo consenso esplicito.
+        I piani sono disponibili solo con <strong>abbonamento annuale</strong>. Paghi una volta all'anno con carta, in modo sicuro tramite Stripe, direttamente dal portale web. L'abbonamento si <strong>rinnova automaticamente ogni anno</strong> e puoi disdire in qualsiasi momento dal portale: la disdetta ha effetto alla fine del periodo già pagato. Per il piano Club Elite il pagamento si concorda con noi, anche con bonifico bancario.
       </div>
     </div>
 
@@ -784,7 +801,7 @@ footer {
         <i class="fa-solid fa-chevron-down"></i>
       </button>
       <div class="faq-answer">
-        I tuoi dati rimangono al sicuro nel sistema anche in caso di mancato rinnovo. Potrai sempre accedere all'account in modalità di sola lettura per consultare lo storico delle stagioni precedenti. Per ricominciare a inserire dati e utilizzare tutte le funzionalità sarà sufficiente rinnovare l'abbonamento.
+        I tuoi dati restano al sicuro anche se non rinnovi. Se il pagamento non va a buon fine o l'abbonamento scade, hai <strong>14 giorni di tolleranza</strong>; poi l'account passa in <strong>sola lettura</strong>: puoi consultare lo storico, ma non modificare i dati né esportarli. Per riattivare tutte le funzioni basta rinnovare l'abbonamento. Lo stesso vale per i collaboratori e i giocatori collegati al tuo account.
       </div>
     </div>
 
@@ -794,7 +811,37 @@ footer {
         <i class="fa-solid fa-chevron-down"></i>
       </button>
       <div class="faq-answer">
-        L'app per Coach, Assistente e Atleta è disponibile come app nativa su <strong>iOS</strong> e <strong>Android</strong>. La versione web è dedicata esclusivamente al ruolo <strong>Club Director</strong>, che può accedere alla propria dashboard di supervisione da qualsiasi browser desktop senza installare nulla.
+        L'app per Coach, Assistente e Atleta è un'app nativa per <strong>iOS</strong> e <strong>Android</strong> (in arrivo sugli store). Registrazione, pagamento e gestione dell'abbonamento si fanno invece sul <strong>portale web</strong>, accessibile da qualsiasi browser, dove il Club Director gestisce anche i coach del club.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Come invito assistenti e giocatori?
+        <i class="fa-solid fa-chevron-down"></i>
+      </button>
+      <div class="faq-answer">
+        Dal tuo account generi un <strong>codice di invito</strong> e lo condividi con assistenti e giocatori. Loro scaricano l'app, scelgono il proprio ruolo, inseriscono il codice e creano il loro account. Non pagano nulla: il loro accesso segue il tuo abbonamento. I giocatori minorenni hanno bisogno dell'autorizzazione dei genitori.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Come posso disdire l'abbonamento?
+        <i class="fa-solid fa-chevron-down"></i>
+      </button>
+      <div class="faq-answer">
+        Puoi disdire in qualsiasi momento dal portale web, nella sezione dell'abbonamento. La disdetta ha effetto alla fine del periodo già pagato e non vengono effettuati ulteriori addebiti.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Come funziona il pagamento e la fatturazione?
+        <i class="fa-solid fa-chevron-down"></i>
+      </button>
+      <div class="faq-answer">
+        I pagamenti con carta sono gestiti da Stripe, un servizio di pagamento sicuro: non conserviamo i dati della tua carta. Per informazioni sulla fatturazione <a href="contatti.html">scrivici</a>.
       </div>
     </div>
 
@@ -807,7 +854,7 @@ footer {
     <div class="section-label" style="text-align:center">Inizia oggi</div>
     <h2 class="display">Il primo mese<br><span style="color:var(--g)">è gratis.</span></h2>
     <p>Nessuna carta di credito. Nessun vincolo. Prova tutto per 30 giorni.</p>
-    <a href="contatti.html" class="btn-primary">
+    <a href="https://coach-board-admin.vercel.app/register" class="btn-primary">
       <i class="fa-solid fa-futbol"></i>
       Prova gratis 1 mese
     </a>
@@ -816,8 +863,15 @@ footer {
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">THE <span>COACH</span> BOARD</div>
-  <div class="footer-copy">© 2025 The Coach Board. Tutti i diritti riservati.</div>
+  <div class="footer-logo"><img class="logo-img" src="logo-tcb.png" alt="The Coach Board">THE <span>COACH</span> BOARD</div>
+  <div class="footer-links">
+    <a href="privacy.html">Privacy</a>
+    <a href="termini.html">Termini di servizio</a>
+    <a href="cookie.html">Cookie</a>
+    <a href="contatti.html">Contatti</a>
+  </div>
+  <div class="footer-copy">© 2026 The Coach Board. Tutti i diritti riservati.</div>
+  <!-- TODO (dopo l'apertura della partita IVA): aggiungere qui ragione sociale, P.IVA, indirizzo -->
 </footer>
 
 <script>

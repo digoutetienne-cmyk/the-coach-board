@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cookie policy — The Coach Board</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root { --g:#00c853; --gdim:rgba(0,200,83,.10); --gbright:#00e676; --dark:#141d17; --dark2:#1b261e; --dark3:#243329; --bd:rgba(255,255,255,.08); --t1:#f0f4f1; --t2:#a8b5aa; --t3:#5a6b5c; --r:14px; --rs:8px; }
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; }
+body { font-family:'Inter',sans-serif; background:var(--dark); color:var(--t1); font-size:16px; line-height:1.6; overflow-x:hidden; }
+.display { font-family:'Barlow Condensed',sans-serif; font-weight:900; line-height:.95; letter-spacing:-.01em; text-transform:uppercase; }
+nav { position:fixed; top:0; left:0; right:0; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:16px 40px; background:rgba(8,12,9,.85); backdrop-filter:blur(12px); border-bottom:1px solid var(--bd); }
+.nav-logo { display:inline-flex; align-items:center; gap:10px; font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:20px; letter-spacing:.05em; text-transform:uppercase; color:var(--t1); text-decoration:none; }
+.nav-logo span { color:var(--g); }
+.logo-img { height:34px; width:34px; border-radius:50%; flex-shrink:0; }
+.nav-links { display:flex; align-items:center; gap:32px; list-style:none; }
+.nav-links a { color:var(--t2); text-decoration:none; font-size:14px; font-weight:500; transition:color .2s; }
+.nav-links a:hover { color:var(--t1); }
+.nav-cta { background:var(--g); color:#000 !important; font-weight:700 !important; padding:10px 22px; border-radius:100px; font-size:14px !important; }
+.nav-cta:hover { background:var(--gbright) !important; }
+.hamburger-btn { display:none; background:none; border:none; color:var(--t1); font-size:22px; cursor:pointer; padding:6px; }
+.mobile-menu { position:fixed; inset:0; background:var(--dark); z-index:200; display:none; flex-direction:column; padding:24px; }
+.mobile-menu.open { display:flex; }
+.mobile-menu-top { display:flex; align-items:center; justify-content:space-between; margin-bottom:48px; }
+.mobile-menu-close { background:none; border:none; color:var(--t1); font-size:24px; cursor:pointer; padding:6px; }
+.mobile-menu-links { display:flex; flex-direction:column; gap:8px; list-style:none; }
+.mobile-menu-links a { display:block; color:var(--t2); text-decoration:none; font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:32px; text-transform:uppercase; padding:14px 0; border-bottom:1px solid var(--bd); }
+.mobile-menu-links a.login-link { color:var(--g); }
+.mobile-menu-cta { margin-top:32px; display:block; text-align:center; background:var(--g); color:#000; font-weight:700; font-size:16px; padding:16px; border-radius:100px; text-decoration:none; }
+.hero { padding:140px 40px 40px; text-align:center; max-width:760px; margin:0 auto; }
+.section-label { font-size:11px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--g); margin-bottom:16px; }
+.hero h1 { font-size:clamp(44px,7vw,72px); margin-bottom:16px; }
+.hero p { font-size:15px; color:var(--t3); }
+.legal { max-width:820px; margin:0 auto; padding:24px 40px 96px; }
+.legal h2 { font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:26px; text-transform:uppercase; letter-spacing:.03em; color:var(--t1); margin:40px 0 12px; }
+.legal p, .legal li { font-size:15px; color:var(--t2); line-height:1.75; margin-bottom:12px; }
+.legal ul { padding-left:22px; margin-bottom:12px; }
+.legal strong { color:var(--t1); }
+.legal a { color:var(--g); }
+.legal table { width:100%; border-collapse:collapse; margin:12px 0 20px; font-size:14px; }
+.legal th, .legal td { text-align:left; padding:10px 12px; border-bottom:1px solid var(--bd); color:var(--t2); vertical-align:top; }
+.legal th { color:var(--t1); font-weight:700; }
+mark.ph { background:rgba(255,193,7,.18); color:#ffd54f; padding:1px 5px; border-radius:4px; }
+footer { border-top:1px solid var(--bd); padding:40px; display:flex; align-items:center; justify-content:space-between; max-width:1200px; margin:0 auto; }
+.footer-logo { display:inline-flex; align-items:center; gap:10px; font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:18px; letter-spacing:.05em; text-transform:uppercase; color:var(--t3); }
+.footer-logo span { color:var(--g); }
+.footer-logo .logo-img { height:28px; width:28px; }
+.footer-links { display:flex; gap:22px; flex-wrap:wrap; justify-content:center; }
+.footer-links a { color:var(--t3); font-size:13px; text-decoration:none; }
+.footer-links a:hover { color:var(--g); }
+.footer-copy { font-size:13px; color:var(--t3); text-align:right; }
+@media (max-width:900px) {
+  nav { padding:14px 20px; } .nav-links { display:none; } .hamburger-btn { display:block; }
+  .hero { padding:100px 20px 24px; } .legal { padding:16px 20px 64px; }
+  footer { flex-direction:column; gap:16px; text-align:center; padding:32px 20px; } .footer-copy { text-align:center; }
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo"><img class="logo-img" src="logo-tcb.png" alt="The Coach Board">THE <span>COACH</span> BOARD</a>
+  <ul class="nav-links">
+    <li><a href="come-funziona.html">Come funziona</a></li>
+    <li><a href="chi-siamo.html">Chi siamo</a></li>
+    <li><a href="prezzi.html">Prezzi</a></li>
+    <li><a href="contatti.html">Contatti</a></li>
+    <li><a href="https://coach-board-admin.vercel.app/">Accedi</a></li>
+    <li><a href="https://coach-board-admin.vercel.app/register" class="nav-cta">Prova gratis</a></li>
+  </ul>
+  <button class="hamburger-btn" onclick="document.getElementById('mobile-menu').classList.add('open')">&#9776;</button>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <div class="mobile-menu-top">
+    <a href="index.html" class="nav-logo"><img class="logo-img" src="logo-tcb.png" alt="The Coach Board">THE <span>COACH</span> BOARD</a>
+    <button class="mobile-menu-close" onclick="document.getElementById('mobile-menu').classList.remove('open')">&#10005;</button>
+  </div>
+  <ul class="mobile-menu-links">
+    <li><a href="come-funziona.html">Come funziona</a></li>
+    <li><a href="chi-siamo.html">Chi siamo</a></li>
+    <li><a href="prezzi.html">Prezzi</a></li>
+    <li><a href="contatti.html">Contatti</a></li>
+    <li><a href="https://coach-board-admin.vercel.app/" class="login-link">Accedi</a></li>
+  </ul>
+  <a href="https://coach-board-admin.vercel.app/register" class="mobile-menu-cta">Prova gratis 1 mese</a>
+</div>
+<div class="hero">
+  <div class="section-label">Documenti legali</div>
+  <h1 class="display">Cookie<br><em style='font-style:normal;color:var(--g)'>policy</em></h1>
+  <p>Ultimo aggiornamento: <mark class="ph">[data]</mark></p>
+</div>
+<div class="legal">
+
+<p>Questa pagina spiega quali cookie e risorse di terze parti usa il sito di The Coach Board.</p>
+
+<h2>1. Cookie</h2>
+<p>Il sito <mark class="ph">[verificare prima della pubblicazione]</mark> non utilizza cookie di profilazione né cookie di analisi o di marketing. Il portale web e l'app usano solo strumenti tecnici necessari al funzionamento, per esempio per mantenere l'accesso dopo il login. Per questi non è richiesto il consenso.</p>
+
+<h2>2. Risorse caricate da terzi</h2>
+<p>Per mostrare le pagine, il sito carica alcuni contenuti da servizi esterni. Quando apri una pagina, il tuo browser può comunicare l'indirizzo IP a questi fornitori:</p>
+<ul>
+<li><strong>Google Fonts</strong> (Google), per i caratteri tipografici.</li>
+<li><strong>Cloudflare cdnjs</strong>, per le icone (Font Awesome).</li>
+<li><strong>Formspree</strong>, quando invii un messaggio dal modulo contatti.</li>
+</ul>
+<p><mark class="ph">[Per ridurre la condivisione dei dati, i caratteri e le icone possono essere ospitati direttamente sul sito: da valutare con lo sviluppatore.]</mark></p>
+
+<h2>3. Come gestire i cookie</h2>
+<p>Puoi bloccare o cancellare i cookie dalle impostazioni del tuo browser. Disattivare i cookie tecnici può impedire il corretto funzionamento del portale.</p>
+
+<h2>4. Altre informazioni</h2>
+<p>Per sapere come trattiamo i tuoi dati personali leggi l'<a href="privacy.html">Informativa privacy</a>. Per qualsiasi domanda scrivi a <a href="mailto:info@thecoachboard.it">info@thecoachboard.it</a>.</p>
+
+</div>
+<footer>
+  <div class="footer-logo"><img class="logo-img" src="logo-tcb.png" alt="The Coach Board">THE <span>COACH</span> BOARD</div>
+  <div class="footer-links">
+    <a href="privacy.html">Privacy</a>
+    <a href="termini.html">Termini di servizio</a>
+    <a href="cookie.html">Cookie</a>
+    <a href="contatti.html">Contatti</a>
+  </div>
+  <div class="footer-copy">© 2026 The Coach Board. Tutti i diritti riservati.</div>
+</footer>
+</body>
+</html>

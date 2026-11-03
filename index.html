@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Coach Board — L'app per allenatori e società di calcio</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<meta name="description" content="The Coach Board: l'app per allenatori e società di calcio. Rosa, allenamenti, convocazioni, presenze e report in un unico posto. Primo mese gratis.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -890,26 +892,41 @@ footer {
   .hamburger-btn { display: block; }
 }
 
+
+/* ── AGGIORNAMENTO NOV 2026 ── */
+.nav-logo { display: inline-flex; align-items: center; gap: 10px; }
+.logo-img { height: 34px; width: 34px; border-radius: 50%; flex-shrink: 0; }
+.footer-logo { display: inline-flex; align-items: center; gap: 10px; }
+.footer-logo .logo-img { height: 28px; width: 28px; }
+.footer-links { display: flex; gap: 22px; flex-wrap: wrap; justify-content: center; }
+.footer-links a { color: var(--t3); font-size: 13px; text-decoration: none; transition: color .2s; }
+.footer-links a:hover { color: var(--g); }
+.footer-copy { text-align: right; }
+.prezzi-note { margin-top: 20px; font-size: 13px; color: var(--t3); text-align: center; line-height: 1.5; }
+.mobile-menu-links a.login-link { color: var(--g); }
+@media (max-width: 900px) { .footer-copy { text-align: center; } }
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="nav-logo">THE <span>COACH</span> BOARD</a>
+  <a href="#" class="nav-logo"><img class="logo-img" src="logo-tcb.png" alt="The Coach Board">THE <span>COACH</span> BOARD</a>
   <ul class="nav-links">
     <li><a href="come-funziona.html">Come funziona</a></li>
     <li><a href="#ruoli">A chi è rivolto</a></li>
+    <li><a href="chi-siamo.html">Chi siamo</a></li>
     <li><a href="prezzi.html">Prezzi</a></li>
     <li><a href="contatti.html">Contatti</a></li>
-    <li><a href="prezzi.html" class="nav-cta">Prova gratis</a></li>
+    <li><a href="https://coach-board-admin.vercel.app/">Accedi</a></li>
+    <li><a href="https://coach-board-admin.vercel.app/register" class="nav-cta">Prova gratis</a></li>
   </ul>
 <button class="hamburger-btn" onclick="openMobileMenu()"><i class="fa-solid fa-bars"></i></button>
 </nav>
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobile-menu">
   <div class="mobile-menu-top">
-    <a href="index.html" class="nav-logo">THE <span>COACH</span> BOARD</a>
+    <a href="index.html" class="nav-logo"><img class="logo-img" src="logo-tcb.png" alt="The Coach Board">THE <span>COACH</span> BOARD</a>
     <button class="mobile-menu-close" onclick="closeMobileMenu()"><i class="fa-solid fa-xmark"></i></button>
   </div>
   <ul class="mobile-menu-links">
@@ -917,8 +934,9 @@ footer {
     <li><a href="chi-siamo.html" class="">Chi siamo</a></li>
     <li><a href="prezzi.html" class="">Prezzi</a></li>
     <li><a href="contatti.html" class="">Contatti</a></li>
+    <li><a href="https://coach-board-admin.vercel.app/" class="login-link">Accedi</a></li>
   </ul>
-  <a href="prezzi.html" class="mobile-menu-cta">Prova gratis 1 mese</a>
+  <a href="https://coach-board-admin.vercel.app/register" class="mobile-menu-cta">Prova gratis 1 mese</a>
 </div>
 
 
@@ -941,14 +959,14 @@ footer {
   </div>
 
   <div class="hero-content">
-    <div class="hero-eyebrow">Disponibile su iOS &amp; Android</div>
+    <div class="hero-eyebrow">Prossimamente su iOS &amp; Android</div>
     <h1 class="display">
       L'app che ogni<br>allenatore e ogni<br><em>società aspettava.</em>
     </h1>
     <p class="hero-sub">Gestisci la tua squadra, pianifica gli allenamenti, prepara le convocazioni — tutto in un'unica app. Niente più carta e penna o fogli Excel.</p>
     <p class="hero-sub hero-sub-club">Sei una società? Monitora tutte le squadre del tuo settore giovanile da un'unica dashboard web.</p>
     <div class="hero-ctas">
-      <a href="prezzi.html" class="btn-primary">
+      <a href="https://coach-board-admin.vercel.app/register" class="btn-primary">
         <i class="fa-solid fa-futbol"></i>
         Prova gratis 1 mese
       </a>
@@ -1087,6 +1105,7 @@ footer {
           <div class="ruolo-feature">Gestione presenze</div>
           <div class="ruolo-feature">Supporto convocazioni</div>
           <div class="ruolo-feature">Comunicazione squadra</div>
+          <div class="ruolo-feature" style="color:var(--g);font-weight:700">Sempre gratuito, con codice di invito</div>
         </div>
       </div>
       <div class="ruolo-card">
@@ -1097,7 +1116,7 @@ footer {
           <div class="ruolo-feature">Calendario impegni</div>
           <div class="ruolo-feature">Ricezione convocazioni</div>
           <div class="ruolo-feature">Statistiche personali</div>
-          <div class="ruolo-feature" style="color:var(--g);font-weight:700">Sempre gratuito</div>
+          <div class="ruolo-feature" style="color:var(--g);font-weight:700">Sempre gratuito, con codice di invito</div>
         </div>
       </div>
       <div class="ruolo-card" style="border-color:rgba(0,200,83,.2)">
@@ -1140,61 +1159,61 @@ footer {
         <div class="prezzo-feature"><i class="fa-solid fa-check"></i> Report PDF stagionali</div>
         <div class="prezzo-feature"><i class="fa-solid fa-check"></i> Multi-squadra</div>
       </div>
-      <a href="contatti.html" class="btn-prezzo btn-prezzo-secondary">Prova gratis</a>
+      <a href="https://coach-board-admin.vercel.app/register" class="btn-prezzo btn-prezzo-secondary">Prova gratis</a>
     </div>
 
     <!-- Starter Club -->
     <div class="prezzo-card">
       <div class="prezzo-nome">Club Starter</div>
-      <div class="prezzo-desc">Per le società con fino a 4 squadre che vogliono tutto sotto controllo.</div>
+      <div class="prezzo-desc">Per le società con fino a 4 coach che vogliono tutto sotto controllo.</div>
       <div class="prezzo-num"><span>€</span>399<span style="font-size:28px">,99</span></div>
       <div class="prezzo-period">all'anno</div>
       <div class="prezzo-mensile">≈ €40/mese · fino a 4 coach inclusi</div>
       <div class="prezzo-trial"><i class="fa-solid fa-gift"></i> 1 mese gratuito, nessuna carta richiesta</div>
       <div class="prezzo-divider"></div>
       <div class="prezzo-features">
-        <div class="prezzo-feature"><i class="fa-solid fa-check"></i> Tutto del piano Coach (×4)</div>
+        <div class="prezzo-feature"><i class="fa-solid fa-check"></i> Tutto del piano Coach, per 4 coach</div>
         <div class="prezzo-feature"><i class="fa-solid fa-check"></i> Dashboard web Club Director</div>
         <div class="prezzo-feature"><i class="fa-solid fa-check"></i> Monitoraggio multi-squadra</div>
         <div class="prezzo-feature"><i class="fa-solid fa-check"></i> Report aggregati a livello società</div>
         <div class="prezzo-feature"><i class="fa-solid fa-check"></i> Accesso da mobile e browser</div>
       </div>
-      <a href="contatti.html" class="btn-prezzo btn-prezzo-primary">Prova gratis</a>
+      <a href="https://coach-board-admin.vercel.app/register" class="btn-prezzo btn-prezzo-primary">Prova gratis</a>
     </div>
 
     <!-- Pro Club -->
     <div class="prezzo-card">
       <div class="prezzo-nome">Club Pro</div>
-      <div class="prezzo-desc">Per le società strutturate con settori giovanili fino a 8 squadre.</div>
+      <div class="prezzo-desc">Per le società strutturate con settori giovanili fino a 8 coach.</div>
       <div class="prezzo-num"><span>€</span>699<span style="font-size:28px">,99</span></div>
       <div class="prezzo-period">all'anno</div>
       <div class="prezzo-mensile">≈ €70/mese · fino a 8 coach inclusi</div>
       <div class="prezzo-trial"><i class="fa-solid fa-gift"></i> 1 mese gratuito, nessuna carta richiesta</div>
       <div class="prezzo-divider"></div>
       <div class="prezzo-features">
-        <div class="prezzo-feature"><i class="fa-solid fa-check"></i> Tutto del piano Starter (×8)</div>
+        <div class="prezzo-feature"><i class="fa-solid fa-check"></i> Tutto del piano Starter, fino a 8 coach</div>
         <div class="prezzo-feature"><i class="fa-solid fa-check"></i> Dashboard web Club Director</div>
         <div class="prezzo-feature"><i class="fa-solid fa-check"></i> Monitoraggio multi-squadra</div>
         <div class="prezzo-feature"><i class="fa-solid fa-check"></i> Report aggregati a livello società</div>
         <div class="prezzo-feature"><i class="fa-solid fa-check"></i> Supporto prioritario</div>
       </div>
-      <a href="contatti.html" class="btn-prezzo btn-prezzo-secondary">Prova gratis</a>
+      <a href="https://coach-board-admin.vercel.app/register" class="btn-prezzo btn-prezzo-secondary">Prova gratis</a>
     </div>
 
     <!-- Elite Club -->
     <div class="prezzo-card" style="border-color:rgba(0,200,83,.15)">
       <div class="prezzo-nome">Club Elite</div>
-      <div class="prezzo-desc">Per le grandi società con più di 8 squadre. Prezzo su misura per le tue esigenze.</div>
+      <div class="prezzo-desc">Per le grandi società con più di 8 coach. Prezzo e condizioni concordati con te.</div>
       <div style="margin-bottom:8px">
         <div style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:32px;color:var(--t1);line-height:1">Su richiesta</div>
       </div>
       <div class="prezzo-period">prezzo personalizzato</div>
-      <div class="prezzo-mensile">Oltre 8 coach</div>
-      <div class="prezzo-trial"><i class="fa-solid fa-gift"></i> 1 mese gratuito, nessuna carta richiesta</div>
+      <div class="prezzo-mensile">Coach e squadre concordati con te</div>
+      <div class="prezzo-trial"><i class="fa-solid fa-handshake"></i> Attivazione e condizioni concordate con noi</div>
       <div class="prezzo-divider"></div>
       <div class="prezzo-features">
         <div class="prezzo-feature"><i class="fa-solid fa-check"></i> Tutto del piano Pro</div>
-        <div class="prezzo-feature"><i class="fa-solid fa-check"></i> Oltre 8 squadre</div>
+        <div class="prezzo-feature"><i class="fa-solid fa-check"></i> Numero di coach e squadre concordato</div>
         <div class="prezzo-feature"><i class="fa-solid fa-check"></i> Onboarding personalizzato</div>
         <div class="prezzo-feature"><i class="fa-solid fa-check"></i> Prezzi su misura</div>
         <div class="prezzo-feature"><i class="fa-solid fa-check"></i> Supporto prioritario dedicato</div>
@@ -1215,6 +1234,8 @@ footer {
     </div>
   </div>
 
+  <p class="prezzi-note">Prezzi annuali per ora. Pagamento con carta tramite Stripe, rinnovo automatico ogni anno, disdetta in qualsiasi momento dal portale.</p>
+
 </section>
 
 <!-- CTA FINALE -->
@@ -1222,8 +1243,8 @@ footer {
   <div class="cta-finale-inner">
     <div class="section-label" style="text-align:center">Inizia oggi</div>
     <h2 class="display">Il primo mese<br><span style="color:var(--g)">è gratis.</span></h2>
-    <p>Nessuna carta di credito richiesta. Scarica l'app, crea la tua squadra e prova tutto senza limiti per 30 giorni.</p>
-    <a href="contatti.html" class="btn-primary" style="margin:0 auto;display:inline-flex">
+    <p>Registrati sul portale web, senza carta di credito. Poi scarica l'app, crea la tua squadra e prova tutto senza limiti per 30 giorni.</p>
+    <a href="https://coach-board-admin.vercel.app/register" class="btn-primary" style="margin:0 auto;display:inline-flex">
       <i class="fa-solid fa-futbol"></i>
       Prova gratis per 1 mese
     </a>
@@ -1248,8 +1269,15 @@ footer {
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">THE <span>COACH</span> BOARD</div>
-  <div class="footer-copy">© 2025 The Coach Board. Tutti i diritti riservati.</div>
+  <div class="footer-logo"><img class="logo-img" src="logo-tcb.png" alt="The Coach Board">THE <span>COACH</span> BOARD</div>
+  <div class="footer-links">
+    <a href="privacy.html">Privacy</a>
+    <a href="termini.html">Termini di servizio</a>
+    <a href="cookie.html">Cookie</a>
+    <a href="contatti.html">Contatti</a>
+  </div>
+  <div class="footer-copy">© 2026 The Coach Board. Tutti i diritti riservati.</div>
+  <!-- TODO (dopo l'apertura della partita IVA): aggiungere qui ragione sociale, P.IVA, indirizzo -->
 </footer>
 
 
