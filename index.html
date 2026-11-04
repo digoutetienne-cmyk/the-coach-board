@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Coach Board — L'app per allenatori e società di calcio</title>
 <link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="description" content="The Coach Board: l'app per allenatori e società di calcio. Rosa, allenamenti, convocazioni, presenze e report in un unico posto. Primo mese gratis.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -905,13 +906,17 @@ footer {
 .prezzi-note { margin-top: 20px; font-size: 13px; color: var(--t3); text-align: center; line-height: 1.5; }
 .mobile-menu-links a.login-link { color: var(--g); }
 @media (max-width: 900px) { .footer-copy { text-align: center; } }
+
+.logo-full { height: 46px; width: auto; display: block; }
+.footer-logo .logo-full { height: 40px; }
+@media (max-width: 600px) { .logo-full { height: 38px; } }
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="nav-logo"><img class="logo-img" src="logo-tcb.png" alt="The Coach Board">THE <span>COACH</span> BOARD</a>
+  <a href="#" class="nav-logo"><img class="logo-full" src="logo-orizzontale-chiaro.png" alt="The Coach Board"></a>
   <ul class="nav-links">
     <li><a href="come-funziona.html">Come funziona</a></li>
     <li><a href="#ruoli">A chi è rivolto</a></li>
@@ -926,7 +931,7 @@ footer {
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobile-menu">
   <div class="mobile-menu-top">
-    <a href="index.html" class="nav-logo"><img class="logo-img" src="logo-tcb.png" alt="The Coach Board">THE <span>COACH</span> BOARD</a>
+    <a href="index.html" class="nav-logo"><img class="logo-full" src="logo-orizzontale-chiaro.png" alt="The Coach Board"></a>
     <button class="mobile-menu-close" onclick="closeMobileMenu()"><i class="fa-solid fa-xmark"></i></button>
   </div>
   <ul class="mobile-menu-links">
@@ -1271,7 +1276,7 @@ footer {
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo"><img class="logo-img" src="logo-tcb.png" alt="The Coach Board">THE <span>COACH</span> BOARD</div>
+  <div class="footer-logo"><img class="logo-full" src="logo-orizzontale-chiaro.png" alt="The Coach Board"></div>
   <div class="footer-links">
     <a href="privacy.html">Privacy</a>
     <a href="termini.html">Termini di servizio</a>
