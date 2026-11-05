@@ -14,15 +14,15 @@
 <style>
 /* ── TOKENS ── */
 :root {
-  --g: #00c853;
-  --gdim: rgba(0,200,83,.10);
-  --gbright: #00e676;
-  --dark: #141d17;
-  --dark2: #1b261e;
-  --dark3: #243329;
+  --g: #00B814;
+  --gdim: rgba(0,184,20,.10);
+  --gbright: #14D12A;
+  --dark: #040D08;
+  --dark2: #0b160f;
+  --dark3: #14231a;
   --bd: rgba(255,255,255,.08);
-  --t1: #f0f4f1;
-  --t2: #a8b5aa;
+  --t1: #FFFFFF;
+  --t2: #A1A1AA;
   --t3: #5a6b5c;
   --r: 14px;
   --rs: 8px;
@@ -59,7 +59,7 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 16px 40px;
-  background: rgba(8,12,9,.85);
+  background: rgba(4,13,8,.85);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--bd);
 }
@@ -122,8 +122,8 @@ nav {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 60% 50% at 70% 50%, rgba(0,200,83,.07) 0%, transparent 70%),
-    radial-gradient(ellipse 40% 60% at 10% 80%, rgba(0,200,83,.04) 0%, transparent 60%);
+    radial-gradient(ellipse 60% 50% at 70% 50%, rgba(0,184,20,.07) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 60% at 10% 80%, rgba(0,184,20,.04) 0%, transparent 60%);
   pointer-events: none;
 }
 
@@ -155,7 +155,7 @@ nav {
   align-items: center;
   gap: 8px;
   background: var(--gdim);
-  border: 1px solid rgba(0,200,83,.2);
+  border: 1px solid rgba(0,184,20,.2);
   border-radius: 100px;
   padding: 6px 14px;
   font-size: 12px;
@@ -409,7 +409,7 @@ nav {
   width: 44px; height: 44px;
   border-radius: 10px;
   background: var(--gdim);
-  border: 1px solid rgba(0,200,83,.15);
+  border: 1px solid rgba(0,184,20,.15);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -453,7 +453,7 @@ nav {
 }
 
 .ruolo-card:hover {
-  border-color: rgba(0,200,83,.25);
+  border-color: rgba(0,184,20,.25);
   transform: translateY(-3px);
 }
 
@@ -521,11 +521,11 @@ nav {
   flex-direction: column;
 }
 
-.prezzo-card:hover { transform: translateY(-4px); border-color: var(--gbright); box-shadow: 0 0 0 1px var(--gbright), 0 8px 32px rgba(0,200,83,.12); }
+.prezzo-card:hover { transform: translateY(-4px); border-color: var(--gbright); box-shadow: 0 0 0 1px var(--gbright), 0 8px 32px rgba(0,184,20,.12); }
 
 .prezzo-card.featured {
   border-color: var(--g);
-  background: linear-gradient(160deg, rgba(0,200,83,.06) 0%, var(--dark2) 60%);
+  background: linear-gradient(160deg, rgba(0,184,20,.06) 0%, var(--dark2) 60%);
 }
 
 .prezzo-features {
@@ -540,7 +540,7 @@ nav {
   margin-top: 32px;
   padding: 20px 28px;
   background: var(--gdim);
-  border: 1px solid rgba(0,200,83,.15);
+  border: 1px solid rgba(0,184,20,.15);
   border-radius: var(--r);
   display: flex;
   align-items: flex-start;
@@ -626,7 +626,7 @@ nav {
   padding: 10px 14px;
   background: var(--gdim);
   border-radius: var(--rs);
-  border: 1px solid rgba(0,200,83,.12);
+  border: 1px solid rgba(0,184,20,.12);
 }
 
 .prezzo-trial i { color: var(--g); }
@@ -688,7 +688,7 @@ nav {
 }
 
 .btn-prezzo-secondary:hover {
-  border-color: rgba(0,200,83,.4);
+  border-color: rgba(0,184,20,.4);
   color: var(--g);
 }
 
@@ -701,7 +701,7 @@ nav {
 
 /* ── CTA FINALE ── */
 .cta-finale {
-  background: linear-gradient(160deg, rgba(0,200,83,.08) 0%, transparent 60%);
+  background: linear-gradient(160deg, rgba(0,184,20,.08) 0%, transparent 60%);
   border-top: 1px solid var(--bd);
 }
 
@@ -745,7 +745,7 @@ nav {
 }
 
 .store-btn:hover {
-  border-color: rgba(0,200,83,.3);
+  border-color: rgba(0,184,20,.3);
   transform: translateY(-2px);
 }
 
@@ -1031,7 +1031,7 @@ footer {
         </div>
         <i class="fa-solid fa-xmark strumento-x"></i>
       </div>
-      <div class="strumento-item" style="border-color:rgba(0,200,83,.25);background:rgba(0,200,83,.04)">
+      <div class="strumento-item" style="border-color:rgba(0,184,20,.25);background:rgba(0,184,20,.04)">
         <span class="strumento-emoji">⚽</span>
         <div>
           <div class="strumento-name" style="color:var(--g)">The Coach Board</div>
@@ -1125,7 +1125,7 @@ footer {
           <div class="ruolo-feature" style="color:var(--g);font-weight:700">Sempre gratuito, con codice di invito</div>
         </div>
       </div>
-      <div class="ruolo-card" style="border-color:rgba(0,200,83,.2)">
+      <div class="ruolo-card" style="border-color:rgba(0,184,20,.2)">
         <div class="ruolo-icon">🏛</div>
         <div class="ruolo-nome">Società</div>
         <div class="ruolo-desc">Visione completa su tutte le squadre del club anche da browser desktop.</div>
@@ -1208,7 +1208,7 @@ footer {
     </div>
 
     <!-- Elite Club -->
-    <div class="prezzo-card" style="border-color:rgba(0,200,83,.15)">
+    <div class="prezzo-card" style="border-color:rgba(0,184,20,.15)">
       <div class="prezzo-nome">Club Elite</div>
       <div class="prezzo-desc">Per le grandi società con più di 8 coach. Prezzo e condizioni concordati con te.</div>
       <div style="margin-bottom:8px">
